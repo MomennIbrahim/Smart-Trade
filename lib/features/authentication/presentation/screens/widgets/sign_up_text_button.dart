@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_app/core/widgets/custom_navigator.dart';
 import 'package:task_app/features/authentication/presentation/screens/register_screen.dart';
+import '../../../../../core/constace.dart';
 
 class SignUpTextButton extends StatelessWidget {
   const SignUpTextButton({super.key});
@@ -12,6 +13,9 @@ class SignUpTextButton extends StatelessWidget {
           customNavigatorAndReplacement(
               context: context, widget: RegisterScreen());
         },
-        child: const Text('Sign up'));
+        child: const Text(
+          'Sign up',
+          style: TextStyle(color: Constance.cBlue),
+        ));
   }
 }

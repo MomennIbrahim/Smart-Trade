@@ -42,7 +42,8 @@ class DataTableAlert extends StatelessWidget {
             Scrollbar(
               thumbVisibility: true,
               interactive: true,
-              radius: const Radius.circular(20.0),
+              radius: Radius.circular(20.0.r),
+
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
@@ -71,14 +72,6 @@ class DataTableAlert extends StatelessWidget {
                 ),
               ),
             ),
-            CustomSized.sizedHeight10,
-            // Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: 70.0.w),
-            //   child: const Divider(
-            //     thickness: 1,
-            //     color: Colors.blue,
-            //   ),
-            // ),
           ],
         ),
       ),

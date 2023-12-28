@@ -54,6 +54,7 @@ class CustomTextFormField extends StatelessWidget {
             fillColor: fillColor,
             filled: true,
             enabledBorder: outLineInputBorder(),
+            errorBorder: outLineInputBorder(),
           )),
     );
   }

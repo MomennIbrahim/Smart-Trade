@@ -1,9 +1,17 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/features/splash/splash_screen.dart';
 
+import 'core/utils/bloc_observe.dart';
+import 'core/utils/service_locator.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
+  Bloc.observer = MyBlocObserver();
+  setupServiceLocator();
+
 
   runApp(const MyApp());
 }
@@ -11,7 +19,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

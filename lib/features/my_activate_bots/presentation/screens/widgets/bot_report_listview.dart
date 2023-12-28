@@ -7,9 +7,7 @@ import 'bot_report_item.dart';
 import 'more_button_of_report.dart';
 
 class BotReportListView extends StatelessWidget {
-  BotReportListView({super.key});
-
-  final List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const BotReportListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,27 +15,23 @@ class BotReportListView extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 8.w),
       child: ZoomIn(
         child: ListView.separated(
-          itemBuilder: (context, index) => Align(
-            heightFactor: 0.7,
-            alignment: Alignment.topCenter,
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 4.0),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.blue,
-                    child: Text(
-                      numbers[index].toString(),
-                      style: Styles.style14,
-                    ),
+          itemBuilder: (context, index) => Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 4.0),
+                child: CircleAvatar(
+                  backgroundColor: Colors.blue,
+                  child: Text(
+                    (index+1).toString(),
+                    style: Styles.style14,
                   ),
                 ),
-                const BotReportItem(),
-                const MoreButtonOfReport(),
-              ],
-            ),
+              ),
+              const BotReportItem(),
+              const MoreButtonOfReport(),
+            ],
           ),
-          separatorBuilder: (context, index) => CustomSized.sizedHeight15,
+          separatorBuilder: (context, index) => CustomSized.sizedHeight10,
           itemCount: 10,
         ),
       ),

@@ -68,11 +68,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image(
-                  image:
-                      const AssetImage('assets/images/channels4_profile.jpg'),
-                  width: 50.w,
-                  height: 50.h,
+                const CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/channels4_profile.jpg'),
                 ),
                 SizedBox(
                   width: 10.w,
