@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:task_app/core/constace.dart';
 import 'package:task_app/features/splash/splash_screen.dart';
-
 import 'core/utils/bloc_observe.dart';
 import 'core/utils/service_locator.dart';
 
@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.dark,
         theme: ThemeData(
             scaffoldBackgroundColor: Colors.black,
+            progressIndicatorTheme: const ProgressIndicatorThemeData(
+              color: Constance.cBlue,
+            ),
             sliderTheme: const SliderThemeData(
               activeTrackColor: Colors.blueAccent,
               thumbShape: RoundSliderThumbShape(enabledThumbRadius: 0.0)

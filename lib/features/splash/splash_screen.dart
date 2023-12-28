@@ -101,7 +101,7 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        customNavigatorAndReplacement(context: context, widget: LoginScreen());
+        customNavigatorAndReplacement(context: context, widget: const LoginScreen());
       },
     );
   }

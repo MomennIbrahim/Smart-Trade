@@ -1,11 +1,10 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_it/get_it.dart';
-import 'package:task_app/core/utils/api_service.dart';
 import 'package:task_app/core/utils/service_locator.dart';
 import 'package:task_app/core/utils/sized.dart';
+import 'package:task_app/core/widgets/error_snack_bar.dart';
+import 'package:task_app/core/widgets/success_snack_bar.dart';
 import 'package:task_app/features/authentication/data/repository/authentication_repository_implementation.dart';
 import 'package:task_app/features/authentication/presentation/controller/user_login_cubit.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/auth_image_widget.dart';
@@ -15,25 +14,32 @@ import 'package:task_app/features/authentication/presentation/screens/widgets/si
 import 'package:task_app/features/authentication/presentation/screens/widgets/sign_up_text_button.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/sub_text.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/welcome_text.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
-
-  var emailController = TextEditingController();
-  var passwordController = TextEditingController();
-  var formKey = GlobalKey<FormState>();
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => UserLoginCubit(getIt.get<AuthenticationRepositoryImplementation>()),
+      create: (context) =>
+          UserLoginCubit(getIt.get<AuthenticationRepositoryImplementation>()),
       child: BlocConsumer<UserLoginCubit, UserLoginState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          if (state is UserLoginFailureState) {
+            errorSnackBar(context: context, errMessage: state.errMessage);
+          }
+          if (state is UserLoginSuccessState) {
+            successSnackBar(context: context);
+          }
+        },
         builder: (context, state) {
+          var loginCubit = UserLoginCubit.get(context);
           return Scaffold(
             backgroundColor: Colors.white,
             body: Form(
-              key: formKey,
+              key: loginCubit.formKey,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -44,7 +50,7 @@ class LoginScreen extends StatelessWidget {
                       width: double.infinity,
                       height: MediaQuery.of(context).size.height / 2,
                       child: Card(
-                        elevation: .7,
+                        elevation: 0.7,
                         color: Colors.white,
                         child: Padding(
                           padding: EdgeInsets.all(12.0.w.h),
@@ -53,21 +59,14 @@ class LoginScreen extends StatelessWidget {
                               const WelcomeText(),
                               const SubText(),
                               CustomSized.sizedHeight24,
-                              EmailTextField(emailController: emailController),
+                              EmailTextField(
+                                  emailController: loginCubit.emailController),
                               CustomSized.sizedHeight15,
                               PasswordTextField(
-                                  passwordController: passwordController),
+                                  passwordController:
+                                      loginCubit.passwordController),
                               CustomSized.sizedHeight20,
-                              SignInButton(
-                                onPressed: () {
-                                  if(formKey.currentState!.validate()) {
-                                    UserLoginCubit.get(context).userLogin(
-                                    email: emailController.text,
-                                    password: passwordController.text,
-                                  );
-                                  }
-                                },
-                              ),
+                              const SignInButton(),
                               const Spacer(),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 22.0.h),

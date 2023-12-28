@@ -8,7 +8,7 @@ class SignInTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(onPressed: (){
-      customNavigatorAndReplacement(context: context, widget: LoginScreen());
+      customNavigatorAndReplacement(context: context, widget: const LoginScreen());
     }, child: const Text('Sign in'));
   }
 }

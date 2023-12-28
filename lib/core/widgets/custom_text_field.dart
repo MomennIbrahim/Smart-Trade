@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'out_line_input_border.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -30,7 +31,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 55.h,
       child: TextFormField(
           controller: controller,
           keyboardType: keyBoardType,
@@ -55,6 +56,7 @@ class CustomTextFormField extends StatelessWidget {
             filled: true,
             enabledBorder: outLineInputBorder(),
             errorBorder: outLineInputBorder(),
+            border: outLineInputBorder(),
           )),
     );
   }

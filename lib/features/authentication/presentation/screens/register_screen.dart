@@ -28,7 +28,7 @@ class RegisterScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 30.0.w),
             child: SizedBox(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height / 1.8,
+              height: MediaQuery.of(context).size.height / 1.6,
               child: Card(
                 elevation: 0.7,
                 color: Colors.white,

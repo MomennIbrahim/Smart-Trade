@@ -13,13 +13,11 @@ class AuthenticationRepositoryImplementation
   AuthenticationRepositoryImplementation(this.apiService);
 
   @override
-  Future<Either<ServerFailure, UserModel>> userLogin({
+  Future<Either<Failure, UserModel>> userLogin({
     required String email,
     required String password,
   }) async {
-
     try {
-
       var response = await apiService.postData(
         endPoint: EndPoints.login,
         data: {
@@ -30,13 +28,23 @@ class AuthenticationRepositoryImplementation
 
       UserModel userModel = UserModel.fromJson(response);
       return right(userModel);
-
     } catch (e) {
       if (e is DioException) {
+        print(e.response!.statusMessage);
         return left(ServerFailure.fromDioError(e));
       } else {
         return left(ServerFailure(e.toString()));
       }
     }
+  }
+
+  @override
+  Future<Either<Failure, UserModel>> userRegister(
+      {required String name,
+      required String email,
+      required String password,
+      required String passwordConfirmation,
+      }) {
+    throw UnimplementedError();
   }
 }
