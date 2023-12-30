@@ -14,8 +14,6 @@ import 'package:task_app/features/authentication/presentation/screens/widgets/si
 import 'package:task_app/features/authentication/presentation/screens/widgets/sign_up_text_button.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/sub_text.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/welcome_text.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

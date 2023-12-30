@@ -3,7 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:task_app/core/error/error.dart';
 import 'package:task_app/core/utils/api_service.dart';
 import 'package:task_app/core/utils/end_points.dart';
-import 'package:task_app/features/authentication/data/model/user_model.dart';
+import 'package:task_app/features/authentication/data/model/user_login_model.dart';
+import 'package:task_app/features/authentication/data/model/user_register_model.dart';
 import 'package:task_app/features/authentication/data/repository/base_authentication_repository.dart';
 
 class AuthenticationRepositoryImplementation
@@ -13,7 +14,7 @@ class AuthenticationRepositoryImplementation
   AuthenticationRepositoryImplementation(this.apiService);
 
   @override
-  Future<Either<Failure, UserModel>> userLogin({
+  Future<Either<Failure, UserLoginModel>> userLogin({
     required String email,
     required String password,
   }) async {
@@ -26,11 +27,10 @@ class AuthenticationRepositoryImplementation
         },
       );
 
-      UserModel userModel = UserModel.fromJson(response);
+      UserLoginModel userModel = UserLoginModel.fromJson(response);
       return right(userModel);
     } catch (e) {
       if (e is DioException) {
-        print(e.response!.statusMessage);
         return left(ServerFailure.fromDioError(e));
       } else {
         return left(ServerFailure(e.toString()));
@@ -39,12 +39,30 @@ class AuthenticationRepositoryImplementation
   }
 
   @override
-  Future<Either<Failure, UserModel>> userRegister(
+  Future<Either<Failure, UserRegisterModel>> userRegister(
       {required String name,
       required String email,
       required String password,
       required String passwordConfirmation,
-      }) {
-    throw UnimplementedError();
+      }) async{
+    try {
+      var response = await apiService.postData(
+        endPoint: EndPoints.login,
+        data: {
+          'name': name,
+          'email': email,
+          'password': password,
+          'password_confirmation': passwordConfirmation,
+        },
+      );
+      UserRegisterModel userRegisterModel = UserRegisterModel.fromJson(response);
+      return right(userRegisterModel);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:task_app/core/error/error.dart';
-import 'package:task_app/features/authentication/data/model/user_model.dart';
+import 'package:task_app/features/authentication/data/model/user_login_model.dart';
 import 'package:task_app/features/authentication/data/repository/base_authentication_repository.dart';
 
 part 'user_login_state.dart';

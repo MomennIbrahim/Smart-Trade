@@ -1,6 +1,6 @@
-class UserModel {
+class UserLoginModel {
 
-  UserModel.fromJson(dynamic json) {
+  UserLoginModel.fromJson(dynamic json) {
     accessToken = json['access_token'];
     tokenType = json['token_type'];
     expiresIn = json['expires_in'];
