@@ -52,7 +52,7 @@ class ChangePasswordScreen extends StatelessWidget {
               ConfirmNewPasswordTextField(
                   confirmNewPasswordController: confirmNewPasswordController),
               CustomSized.sizedHeight24,
-              CustomButton(text: 'Change password', onPressed: (){},buttonColor: Constance.cBlue,paddingHorizontal: 70.w,)
+              CustomButton(text: 'Change password', onPressed: (){},buttonColor: Constance.kPrimaryColor,paddingHorizontal: 70.w,)
             ],
           ),
         ),

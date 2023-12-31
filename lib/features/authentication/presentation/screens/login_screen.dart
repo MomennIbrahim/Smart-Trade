@@ -10,7 +10,7 @@ import 'package:task_app/features/authentication/presentation/controller/user_lo
 import 'package:task_app/features/authentication/presentation/screens/widgets/auth_image_widget.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/email_text_field.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/password_text_field.dart';
-import 'package:task_app/features/authentication/presentation/screens/widgets/sign_button.dart';
+import 'package:task_app/features/authentication/presentation/screens/widgets/sign_in_button.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/sign_up_text_button.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/sub_text.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/welcome_text.dart';

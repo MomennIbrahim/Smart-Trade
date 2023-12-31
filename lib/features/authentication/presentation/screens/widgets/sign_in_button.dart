@@ -24,7 +24,7 @@ class SignInButton extends StatelessWidget {
               }
             },
             buttonColor: Colors.blue,
-          ): Center(child: LoadingAnimationWidget.threeArchedCircle(size: 40.w, color: Constance.cBlue,));
+          ): Center(child: LoadingAnimationWidget.threeArchedCircle(size: 40.w, color: Constance.kPrimaryColor,));
         },
       );
   }

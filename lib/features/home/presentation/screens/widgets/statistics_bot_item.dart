@@ -19,7 +19,7 @@ class StatisticsItem extends StatelessWidget {
     appearance: CircularSliderAppearance(
       size: 90.r,
       customColors: CustomSliderColors(
-          progressBarColor: Constance.cBlue,
+          progressBarColor: Constance.kPrimaryColor,
           trackColor: Colors.grey,
           dynamicGradient: true,
       ),
@@ -83,7 +83,7 @@ class StatisticsItem extends StatelessWidget {
                         onPressed: () {
                           customNavigator(context: context, widget: const BotReportScreen2());
                         },
-                        buttonColor: Constance.cBlue,
+                        buttonColor: Constance.kPrimaryColor,
                       )
                     ],
                   ),

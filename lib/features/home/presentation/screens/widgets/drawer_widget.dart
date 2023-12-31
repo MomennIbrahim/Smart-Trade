@@ -89,7 +89,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.r),
                     color: widget.currentIndex == index
-                        ? Constance.cBlue
+                        ? Constance.kPrimaryColor
                         : Colors.transparent,
                   ),
                   child: Padding(

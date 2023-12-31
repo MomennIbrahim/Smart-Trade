@@ -13,7 +13,7 @@ class UpdateButton extends StatelessWidget {
     return CustomButton(
       text: 'Update',
       onPressed: () {},
-      buttonColor: Constance.cBlue,
+      buttonColor: Constance.kPrimaryColor,
       paddingHorizontal: 80.w,
     );
   }

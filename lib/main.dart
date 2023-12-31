@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             scaffoldBackgroundColor: Colors.black,
             progressIndicatorTheme: const ProgressIndicatorThemeData(
-              color: Constance.cBlue,
+              color: Constance.kPrimaryColor,
             ),
             sliderTheme: const SliderThemeData(
               activeTrackColor: Colors.blueAccent,

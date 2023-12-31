@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:task_app/features/authentication/data/model/user_register_model.dart';
@@ -13,6 +14,11 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   final BaseAuthenticationRepository baseAuthenticationRepository;
 
+  var userNameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var passwordConfirmationController = TextEditingController();
+  var formKey = GlobalKey<FormState>();
 
   void userRegister({
     required String name,
@@ -26,12 +32,15 @@ class RegisterCubit extends Cubit<RegisterState> {
       name: name,
       email: email,
       password: password,
-      passwordConfirmation: passwordConfirmation,);
+      passwordConfirmation: passwordConfirmation,
+    );
 
     result.fold((failure){
       emit(UserRegisterFailureState(failure.errMessage.toString()));
+      print(failure.errMessage);
     }, (userRegisterModel) {
       emit(UserRegisterSuccessState(userRegisterModel));
+      print(userRegisterModel.user!.name);
     });
   }
 }

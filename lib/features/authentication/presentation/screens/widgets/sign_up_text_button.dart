@@ -15,7 +15,7 @@ class SignUpTextButton extends StatelessWidget {
         },
         child: const Text(
           'Sign up',
-          style: TextStyle(color: Constance.cBlue),
+          style: TextStyle(color: Constance.kPrimaryColor),
         ));
   }
 }

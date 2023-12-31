@@ -47,7 +47,7 @@ class AuthenticationRepositoryImplementation
       }) async{
     try {
       var response = await apiService.postData(
-        endPoint: EndPoints.login,
+        endPoint: EndPoints.register,
         data: {
           'name': name,
           'email': email,

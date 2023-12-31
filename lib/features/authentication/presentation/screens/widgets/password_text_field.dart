@@ -13,7 +13,7 @@ class PasswordTextField extends StatelessWidget {
       labelColor: Colors.black54,
       fillColor: Colors.blueGrey[100]!,
       controller: passwordController,
-      keyBoardType: TextInputType.emailAddress,
+      keyBoardType: TextInputType.visiblePassword,
       labelText: 'Enter password',
       validatorText: 'password field is empty',
     );
