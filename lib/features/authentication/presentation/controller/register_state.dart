@@ -5,6 +5,8 @@ abstract class RegisterState {}
 
 class RegisterInitial extends RegisterState {}
 
+class ChangeVisibilityState extends RegisterState {}
+
 class UserRegisterLoadingState extends RegisterState {}
 class UserRegisterSuccessState extends RegisterState {
   final UserRegisterModel userRegisterModel;

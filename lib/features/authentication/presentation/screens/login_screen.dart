@@ -14,6 +14,9 @@ import 'package:task_app/features/authentication/presentation/screens/widgets/si
 import 'package:task_app/features/authentication/presentation/screens/widgets/sign_up_text_button.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/sub_text.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/welcome_text.dart';
+import 'package:task_app/features/home/presentation/screens/home_screen.dart';
+
+import '../../../../core/widgets/custom_navigator.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -29,7 +32,11 @@ class LoginScreen extends StatelessWidget {
             errorSnackBar(context: context, errMessage: state.errMessage);
           }
           if (state is UserLoginSuccessState) {
-            successSnackBar(context: context);
+            successSnackBar(context: context,message: 'Login Successfully');
+            customNavigator(
+                context: context,
+                widget: customNavigatorAndRemoveUntil(
+                    context: context, widget: HomeScreen()));
           }
         },
         builder: (context, state) {
@@ -61,6 +68,13 @@ class LoginScreen extends StatelessWidget {
                                   emailController: loginCubit.emailController),
                               CustomSized.sizedHeight15,
                               PasswordTextField(
+                                suffixIcon: IconButton(
+                                    onPressed: () {
+                                      loginCubit.changeVisibility();
+                                    },
+                                    icon: loginCubit.icon
+                                ),
+                                  obscure: loginCubit.isVisibility,
                                   passwordController:
                                       loginCubit.passwordController),
                               CustomSized.sizedHeight20,

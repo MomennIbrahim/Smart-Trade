@@ -3,7 +3,9 @@ part of 'user_login_cubit.dart';
 @immutable
 abstract class UserLoginState {}
 
-class AuthInitial extends UserLoginState {}
+class UerLoginInitial extends UserLoginState {}
+
+class ChangeVisibilityState extends UserLoginState {}
 
 class UserLoginLoadingState extends UserLoginState {}
 class UserLoginSuccessState extends UserLoginState {

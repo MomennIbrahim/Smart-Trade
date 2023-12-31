@@ -6,6 +6,7 @@ import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/features/authentication/data/repository/authentication_repository_implementation.dart';
 import 'package:task_app/features/authentication/presentation/controller/register_cubit.dart';
+import 'package:task_app/features/authentication/presentation/screens/login_screen.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/auth_image_widget.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/email_text_field.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/password_confirmation_text_field.dart';
@@ -14,6 +15,7 @@ import 'package:task_app/features/authentication/presentation/screens/widgets/si
 import 'package:task_app/features/authentication/presentation/screens/widgets/sign_up_button.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/user_name_text_field.dart';
 
+import '../../../../core/widgets/custom_navigator.dart';
 import '../../../../core/widgets/error_snack_bar.dart';
 import '../../../../core/widgets/success_snack_bar.dart';
 
@@ -31,7 +33,8 @@ class RegisterScreen extends StatelessWidget {
             errorSnackBar(context: context, errMessage: state.errMessage);
           }
           if (state is UserRegisterSuccessState) {
-            successSnackBar(context: context);
+            successSnackBar(context: context,message: 'Account created');
+            customNavigator(context: context, widget: const LoginScreen());
           }
         },
         builder: (context, state) {
@@ -76,6 +79,13 @@ class RegisterScreen extends StatelessWidget {
                                         registerCubit.userNameController),
                                 CustomSized.sizedHeight15,
                                 PasswordTextField(
+                                  obscure: registerCubit.isVisibility,
+                                    suffixIcon: IconButton(
+                                        onPressed: () {
+                                          registerCubit.changeVisibility();
+                                        },
+                                        icon: registerCubit.icon
+                                    ),
                                     passwordController:
                                         registerCubit.passwordController),
                                 CustomSized.sizedHeight15,

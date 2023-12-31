@@ -32,7 +32,7 @@ class ServerFailure extends Failure{
 
   factory ServerFailure.fromResponse(int statusCode , dynamic response){
     if(statusCode == 400 || statusCode == 401 || statusCode == 403){
-      return ServerFailure(response['error']);
+      return ServerFailure(response.toString());
     }else if(statusCode == 422){
       if(response.toString() == '{email: [The email must be a valid email address.]}') {
         return ServerFailure(response['email'][0]);

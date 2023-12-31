@@ -2,14 +2,13 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:task_app/core/error/error.dart';
 import 'package:task_app/features/authentication/data/model/user_login_model.dart';
 import 'package:task_app/features/authentication/data/repository/base_authentication_repository.dart';
 
 part 'user_login_state.dart';
 
 class UserLoginCubit extends Cubit<UserLoginState> {
-  UserLoginCubit(this.baseAuthenticationRepository) : super(AuthInitial());
+  UserLoginCubit(this.baseAuthenticationRepository) : super(UerLoginInitial());
 
   static UserLoginCubit get(context) => BlocProvider.of(context);
 
@@ -38,5 +37,14 @@ class UserLoginCubit extends Cubit<UserLoginState> {
       emit(UserLoginSuccessState(userModel));
       print(userModel.user!.name);
     });
+  }
+
+  bool isVisibility = true;
+  Icon icon = const Icon(Icons.visibility);
+
+  void changeVisibility(){
+    isVisibility = !isVisibility;
+    isVisibility? icon = const Icon(Icons.visibility) :  icon = const Icon(Icons.visibility_off);
+    emit(ChangeVisibilityState());
   }
 }

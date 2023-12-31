@@ -43,4 +43,13 @@ class RegisterCubit extends Cubit<RegisterState> {
       print(userRegisterModel.user!.name);
     });
   }
+
+  bool isVisibility = true;
+  Icon icon = const Icon(Icons.visibility);
+
+  void changeVisibility(){
+    isVisibility = !isVisibility;
+    isVisibility? icon = const Icon(Icons.visibility) :  icon = const Icon(Icons.visibility_off);
+    emit(ChangeVisibilityState());
+  }
 }
