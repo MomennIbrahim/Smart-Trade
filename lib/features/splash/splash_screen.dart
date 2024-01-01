@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:task_app/core/constace.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/custom_navigator.dart';
 import 'package:task_app/features/authentication/presentation/screens/login_screen.dart';
+import 'package:task_app/features/home/presentation/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -101,7 +103,7 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        customNavigatorAndReplacement(context: context, widget: const LoginScreen());
+        customNavigatorAndReplacement(context: context, widget: accessToken != null ? HomeScreen() : const LoginScreen() );
       },
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:task_app/core/constace.dart';
+import 'package:task_app/core/utils/local_storage.dart';
 import 'package:task_app/core/utils/service_locator.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/widgets/error_snack_bar.dart';
@@ -32,11 +34,14 @@ class LoginScreen extends StatelessWidget {
             errorSnackBar(context: context, errMessage: state.errMessage);
           }
           if (state is UserLoginSuccessState) {
-            successSnackBar(context: context,message: 'Login Successfully');
-            customNavigator(
-                context: context,
-                widget: customNavigatorAndRemoveUntil(
-                    context: context, widget: HomeScreen()));
+            CacheHelper.saveData(key: 'token', value: state.userModel.accessToken).then((value){
+              accessToken = state.userModel.accessToken!;
+              successSnackBar(context: context,message: 'Login Successfully');
+              customNavigator(
+                  context: context,
+                  widget: customNavigatorAndRemoveUntil(
+                      context: context, widget: HomeScreen()));
+            });
           }
         },
         builder: (context, state) {

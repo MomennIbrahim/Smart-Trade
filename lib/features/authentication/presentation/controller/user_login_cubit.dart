@@ -14,6 +14,8 @@ class UserLoginCubit extends Cubit<UserLoginState> {
 
   final BaseAuthenticationRepository baseAuthenticationRepository;
 
+  UserLoginModel? userLoginModel;
+
   var formKey = GlobalKey<FormState>();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -34,8 +36,9 @@ class UserLoginCubit extends Cubit<UserLoginState> {
       emit(UserLoginFailureState(failure.errMessage));
       print(failure.errMessage.toString());
     }, (userModel){
+      userLoginModel = userModel;
       emit(UserLoginSuccessState(userModel));
-      print(userModel.user!.name);
+      print(userModel.accessToken);
     });
   }
 

@@ -32,7 +32,7 @@ class ServerFailure extends Failure{
 
   factory ServerFailure.fromResponse(int statusCode , dynamic response){
     if(statusCode == 400 || statusCode == 401 || statusCode == 403){
-      return ServerFailure(response.toString());
+      return ServerFailure(response['message']);
     }else if(statusCode == 422){
       if(response.toString() == '{email: [The email must be a valid email address.]}') {
         return ServerFailure(response['email'][0]);
@@ -40,6 +40,10 @@ class ServerFailure extends Failure{
         return ServerFailure(response['password'][0]);
       }else if(response.toString() == '{email: [The email must be a valid email address.], password: [The password must be at least 6 characters.]}'){
         return ServerFailure('The Email and Password must be a valid');
+      }else if(response.toString() == '{\"email\":[\"The email must be a valid email address.\"]}'){
+        return ServerFailure('The email must be a valid email address');
+      }else if(response.toString() == '{\"password\":[\"The password confirmation does not match.\"]}') {
+        return ServerFailure('The password confirmation does not match');
       }else {
         return ServerFailure('Not Valid');
       }

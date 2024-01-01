@@ -22,7 +22,7 @@ class _SplashViewBodyState extends State<CustomAnimationText>
   }
   @override
   void dispose() {
-    // TODO: implement dispose
+    animationController;
     super.dispose();
   }
   @override
