@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:task_app/core/constace.dart';
+import 'package:task_app/core/widgets/animated_loading.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../controller/user_login_cubit.dart';
 
@@ -24,7 +22,7 @@ class SignInButton extends StatelessWidget {
               }
             },
             buttonColor: Colors.blue,
-          ): Center(child: LoadingAnimationWidget.threeArchedCircle(size: 40.w, color: Constance.kPrimaryColor,));
+          ) : const AnimatedLoading();
         },
       );
   }

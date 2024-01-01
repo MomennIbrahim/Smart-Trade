@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/utils/service_locator.dart';
 import 'package:task_app/core/utils/styles.dart';
+import 'package:task_app/core/widgets/animated_loading.dart';
 import 'package:task_app/features/home/data/repository/home_repository_implementation.dart';
 import 'package:task_app/features/home/presentation/controller/get_slider_cubit.dart';
-import 'animation_text.dart';
 import 'custom_carousel_slider.dart';
 
 class CarouselSmartTrade extends StatelessWidget {
@@ -54,7 +54,7 @@ class CarouselSmartTrade extends StatelessWidget {
               style: Styles.style18Yellow,
             );
           } else {
-            return const CircularProgressIndicator();
+            return const AnimatedLoading();
           }
         },
       ),

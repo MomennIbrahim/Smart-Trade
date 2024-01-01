@@ -18,12 +18,7 @@ import 'widgets/trade_bot_list_view.dart';
 import 'widgets/trade_bot_text.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
-
-  final List<String> images = [
-    'https://blog.ipleaders.in/wp-content/uploads/2021/09/Implications-of-youth-opinion-on-international-trade-policy-1280x720-1.jpg',
-    'https://blog.ipleaders.in/wp-content/uploads/2021/09/Implications-of-youth-opinion-on-international-trade-policy-1280x720-1.jpg',
-  ];
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

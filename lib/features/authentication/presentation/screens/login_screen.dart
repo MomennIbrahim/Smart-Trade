@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:task_app/core/constace.dart';
+import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/core/utils/local_storage.dart';
 import 'package:task_app/core/utils/service_locator.dart';
 import 'package:task_app/core/utils/sized.dart';
@@ -16,9 +18,6 @@ import 'package:task_app/features/authentication/presentation/screens/widgets/si
 import 'package:task_app/features/authentication/presentation/screens/widgets/sign_up_text_button.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/sub_text.dart';
 import 'package:task_app/features/authentication/presentation/screens/widgets/welcome_text.dart';
-import 'package:task_app/features/home/presentation/screens/home_screen.dart';
-
-import '../../../../core/widgets/custom_navigator.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -35,12 +34,9 @@ class LoginScreen extends StatelessWidget {
           }
           if (state is UserLoginSuccessState) {
             CacheHelper.saveData(key: 'token', value: state.userModel.accessToken).then((value){
-              accessToken = state.userModel.accessToken!;
+              Constance.accessToken = state.userModel.accessToken!;
               successSnackBar(context: context,message: 'Login Successfully');
-              customNavigator(
-                  context: context,
-                  widget: customNavigatorAndRemoveUntil(
-                      context: context, widget: HomeScreen()));
+              GoRouter.of(context).go(AppRouter.kHomeScreen);
             });
           }
         },

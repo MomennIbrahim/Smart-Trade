@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'navigation_animation.dart';
 
-customNavigator({required BuildContext context,required Widget widget}){
-  Navigator.of(context).push(CustomPageRoute(page: widget));
+customNavigator({required BuildContext context, required Widget widget}) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => widget));
 }
 
-customNavigatorAndReplacement({required BuildContext context,required Widget widget}){
-  Navigator.of(context).pushReplacement(CustomPageRoute(page: widget));
+customNavigatorAndReplacement(
+    {required BuildContext context, required Widget widget}) {
+  Navigator.of(context)
+      .pushReplacement(MaterialPageRoute(builder: (context) => widget));
 }
 
-customNavigatorAndRemoveUntil({required BuildContext context,required Widget widget}){
-  Navigator.of(context).pushAndRemoveUntil(CustomPageRoute(page: widget),(route) => false,);
+customNavigatorAndRemoveUntil(
+    {required BuildContext context, required Widget widget}) {
+  Navigator.of(context).pushAndRemoveUntil(
+    MaterialPageRoute(builder: (context) => widget),
+    (route) => false,
+  );
 }

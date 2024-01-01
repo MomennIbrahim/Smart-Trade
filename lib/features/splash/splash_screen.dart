@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:task_app/core/constace.dart';
+import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/custom_navigator.dart';
@@ -103,7 +105,7 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        customNavigatorAndReplacement(context: context, widget: accessToken != null ? HomeScreen() : const LoginScreen() );
+        GoRouter.of(context).go(Constance.accessToken != null? AppRouter.kHomeScreen : AppRouter.kLoginScreen);
       },
     );
   }

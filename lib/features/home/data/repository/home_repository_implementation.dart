@@ -19,7 +19,7 @@ class HomeRepositoryImplementation implements BaseHomeRepository {
       print('get slider method');
       var response = await apiService.getData(
         endPoint: EndPoints.getSliders,
-        token: accessToken!,
+        token: Constance.accessToken!,
       );
       SlidersModel slidersModel = SlidersModel.fromJson(response);
       print(slidersModel.message);
