@@ -14,6 +14,12 @@ abstract class Styles {
     color: Constance.cWhite,
   );
 
+  static TextStyle styleBold14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.bold,
+    color: Constance.cWhite,
+  );
+
   static TextStyle style16 = TextStyle(
     fontSize: 16.sp,
     color: Constance.cWhite,

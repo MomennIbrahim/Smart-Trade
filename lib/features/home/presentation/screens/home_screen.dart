@@ -3,18 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/core/widgets/divider_under_text.dart';
 import 'package:task_app/features/home/presentation/screens/widgets/drawer_widget.dart';
-import 'package:task_app/features/home/presentation/screens/widgets/free_recomendation_text.dart';
 import 'package:task_app/features/home/presentation/screens/widgets/icons_bar.dart';
-import 'package:task_app/features/home/presentation/screens/widgets/statistics_bot_text.dart';
-import 'package:task_app/features/home/presentation/screens/widgets/statistics_listview.dart';
-import 'package:task_app/features/home/presentation/screens/widgets/top_recomendation_listview.dart';
+import 'package:task_app/features/home/presentation/screens/widgets/status_widget.dart';
 import '../../../../core/utils/sized.dart';
 import '../../../../core/widgets/custom_background.dart';
-import '../../../trade_bot/presentation/screens/widgets/trade_row_listview.dart';
-import 'widgets/arustd_card_listview.dart';
 import 'widgets/carousel_smart_trade.dart';
-import 'widgets/top_recomendation_text.dart';
-import 'widgets/trade_bot_list_view.dart';
+import 'widgets/main_bots_list_view_horizontal.dart';
 import 'widgets/trade_bot_text.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,24 +35,24 @@ class HomeScreen extends StatelessWidget {
                 const TradeBoTText(),
                 DividerUnderText(width: 15.w),
                 CustomSized.sizedHeight20,
-                const TradeBotListView(),
+                const MainBotsListViewHorizontal(),
                 CustomSized.sizedHeight20,
-                const TopRecomendationText(),
-                DividerUnderText(width: 100.w),
-                CustomSized.sizedHeight10,
-                const TopRecomendationListView(),
-                CustomSized.sizedHeight20,
-                const StatisticsBoTText(),
-                DividerUnderText(width: 50.w),
-                CustomSized.sizedHeight10,
-                const StatisticsListView(),
-                CustomSized.sizedHeight24,
-                const FreeRecomandationText(),
-                DividerUnderText(width: 120.w),
-                CustomSized.sizedHeight10,
-                const ArusdtCardListView(),
-                CustomSized.sizedHeight24,
-                const TradeRowListView(),
+                // const TopRecomendationText(),
+                // DividerUnderText(width: 100.w),
+                // CustomSized.sizedHeight10,
+                // const TopRecomendationListView(),
+                // CustomSized.sizedHeight20,
+                // const StatisticsBoTText(),
+                // DividerUnderText(width: 50.w),
+                // CustomSized.sizedHeight10,
+                // const StatisticsListView(),
+                // CustomSized.sizedHeight24,
+                // const FreeRecomandationText(),
+                // DividerUnderText(width: 120.w),
+                // CustomSized.sizedHeight10,
+                // const ArusdtCardListView(),
+                // CustomSized.sizedHeight24,
+                const ProfitAndFeesWidget(),
                 CustomSized.sizedHeight24,
               ],
             ),

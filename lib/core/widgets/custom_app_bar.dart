@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:task_app/core/utils/app_router.dart';
+import 'package:task_app/core/utils/local_storage.dart';
 import 'package:task_app/core/utils/styles.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
@@ -32,9 +35,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
       actions: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
-          child: CircleAvatar(
-            backgroundColor: Colors.grey[400],
-            child: const Icon(Icons.more_vert),
+          child: GestureDetector(
+            onTap: (){
+              CacheHelper.removeData(key: 'token').then((value) {
+                GoRouter.of(context).go(AppRouter.kLoginScreen);
+              });
+            },
+            child: CircleAvatar(
+              backgroundColor: Colors.grey[400],
+              child: const Icon(Icons.more_vert),
+            ),
           ),
         ),
       ],

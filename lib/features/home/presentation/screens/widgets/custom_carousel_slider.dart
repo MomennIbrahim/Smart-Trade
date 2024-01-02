@@ -15,7 +15,7 @@ class CustomCarouselSlider extends StatelessWidget {
       options: CarouselOptions(
         height: 150.h,
         aspectRatio: 16 / 9,
-        viewportFraction: .85,
+        viewportFraction: .75,
         initialPage: 0,
         enableInfiniteScroll: true,
         reverse: false,

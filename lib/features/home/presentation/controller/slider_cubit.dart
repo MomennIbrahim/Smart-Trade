@@ -3,27 +3,26 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:task_app/features/home/data/model/sliders_model.dart';
 import 'package:task_app/features/home/data/repository/base_home_reposirtory.dart';
-import '../../../../core/constace.dart';
 
-part 'get_slider_state.dart';
+part 'slider_state.dart';
 
-class GetSliderCubit extends Cubit<GetSliderState> {
-  GetSliderCubit(this.baseHomeRepository) : super(GetSliderInitial());
+class SliderCubit extends Cubit<SliderState> {
+  SliderCubit(this.baseHomeRepository) : super(SliderInitial());
 
-  static GetSliderCubit get(context) => BlocProvider.of(context);
+  static SliderCubit get(context) => BlocProvider.of(context);
 
   final BaseHomeRepository baseHomeRepository;
 
   void getSliders()async{
 
-    emit(GetSliderLoadingState());
+    emit(SliderLoadingState());
 
     var result = await baseHomeRepository.getSliders();
 
     result.fold((failure){
       emit(GetSliderFailureState(failure.errMessage));
     }, (slidersModel){
-      emit(GetSliderSuccessState(slidersModel));
+      emit(SliderSuccessState(slidersModel));
     });
   }
 }
