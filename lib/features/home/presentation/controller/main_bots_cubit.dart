@@ -13,6 +13,8 @@ class MainBotsCubit extends Cubit<MainBotsState> {
 
   final BaseHomeRepository baseHomeRepository;
 
+  MainBotsModel? cMainBotsModel;
+
   void getMainBots()async{
 
     emit(MainBotsLoadingState());
@@ -22,6 +24,7 @@ class MainBotsCubit extends Cubit<MainBotsState> {
     result.fold((failure){
       emit(MainBotsFailureState(failure.errMessage));
     }, (mainBotsModel){
+      cMainBotsModel = mainBotsModel;
       emit(MainBotsSuccessState(mainBotsModel));
     });
   }

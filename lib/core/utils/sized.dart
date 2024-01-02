@@ -9,9 +9,9 @@ abstract class CustomSized{
   static SizedBox sizedHeight24 = SizedBox(height: 24.h,);
   static SizedBox sizedHeight50 = SizedBox(height: 50.h,);
 
-  static SizedBox sizedWidth5 =  SizedBox(width: 5.h,);
-  static SizedBox sizedWidth10 = SizedBox(width: 10.h,);
-  static SizedBox sizedWidth15 = SizedBox(width: 15.h,);
-  static SizedBox sizedWidth20 = SizedBox(width: 20.h,);
-  static SizedBox sizedWidth24 = SizedBox(width: 24.h,);
+  static SizedBox sizedWidth5 =  SizedBox(width: 5.w,);
+  static SizedBox sizedWidth10 = SizedBox(width: 10.w,);
+  static SizedBox sizedWidth15 = SizedBox(width: 15.w,);
+  static SizedBox sizedWidth20 = SizedBox(width: 20.w,);
+  static SizedBox sizedWidth24 = SizedBox(width: 24.w,);
 }

@@ -31,6 +31,10 @@ class ApiService {
       'lang': 'en',
     };
     var response = await _dio.get(
+      options: Options(
+        followRedirects: true,
+        maxRedirects: 5,
+      ),
       '$_baseUrl$endPoint',
       queryParameters: query,
     );

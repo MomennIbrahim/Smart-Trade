@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/features/home/data/model/main_bots_model.dart';
+import 'package:task_app/features/home/presentation/screens/child_bots_of_main_screen.dart';
 
 import '../../../../../core/utils/sized.dart';
 
@@ -15,7 +18,7 @@ class MainBotsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ChildBotsOfMainScreen(index: index+1,)));
       },
       child: Column(
         children: [
