@@ -23,17 +23,16 @@ class HomeScreen extends StatelessWidget {
         child: Container(
           decoration: customBackGround(),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+            padding: EdgeInsets.symmetric(horizontal: 0.0.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSized.sizedHeight20,
                 const IconsBar(),
-                CustomSized.sizedHeight10,
+                CustomSized.sizedHeight15,
                 const CarouselSmartTrade(),
-                CustomSized.sizedHeight10,
+                CustomSized.sizedHeight20,
                 const TradeBoTText(),
-                DividerUnderText(width: 15.w),
                 CustomSized.sizedHeight20,
                 const MainBotsListViewHorizontal(),
                 CustomSized.sizedHeight20,

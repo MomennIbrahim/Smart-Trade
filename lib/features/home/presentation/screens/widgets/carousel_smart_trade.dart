@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/animated_loading.dart';
+import 'package:task_app/core/widgets/cahed_network.dart';
 import 'package:task_app/features/home/presentation/controller/slider_cubit.dart';
 import 'custom_carousel_slider.dart';
 
@@ -20,22 +21,16 @@ class CarouselSmartTrade extends StatelessWidget {
               return Stack(
                 children: [
                   ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: Image(
-                        image: e.image != null
-                            ? NetworkImage(e.image!)
-                            : const AssetImage(
-                                'assets/images/51503203.jpg') as ImageProvider,
-                        fit: BoxFit.cover,
-                      )),
+                    borderRadius: BorderRadius.circular(20.r),
+                    child: CustomCachedNetWorkImage(image: e.image!),
+                  ),
                   Positioned(
                       left: 20.w,
                       top: 20.h,
                       child: FadeInUpBig(
                           duration: const Duration(milliseconds: 2500),
                           child: Text(
-                            e.text ??
-                            'Smart Trade',
+                            e.text ?? 'Smart Trade',
                             style: Styles.style18Yellow,
                           )))
                 ],
