@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/constace.dart';
 import 'package:task_app/core/utils/theme_data.dart';
+import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
 import 'package:task_app/features/home/data/repository/home_repository_implementation.dart';
 import 'package:task_app/features/home/presentation/controller/main_bots_cubit.dart';
 import 'package:task_app/features/home/presentation/controller/slider_cubit.dart';
@@ -40,6 +41,9 @@ class MyApp extends StatelessWidget {
       builder: (_, child) =>
           MultiBlocProvider(
             providers: [
+              BlocProvider(
+                create: (context) => DrawerCubit(),
+              ),
               BlocProvider(
                 create: (context) => SliderCubit(getIt.get<HomeRepositoryImplementation>())..getSliders(),
               ),

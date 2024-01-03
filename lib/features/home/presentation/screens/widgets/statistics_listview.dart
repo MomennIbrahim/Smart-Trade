@@ -11,7 +11,7 @@ class StatisticsListView extends StatelessWidget {
       height: 130.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => StatisticsItem(),
+        itemBuilder: (context, index) => ActivateBotItem(),
         separatorBuilder: (context, index) => SizedBox(
           height: 5.0.h,
         ),

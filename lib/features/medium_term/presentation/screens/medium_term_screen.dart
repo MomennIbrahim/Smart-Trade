@@ -3,7 +3,7 @@ import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/core/widgets/custom_background.dart';
-import '../../../home/presentation/screens/widgets/drawer_widget.dart';
+import '../../../drawer/presentation/screens/drawer_widget.dart';
 import 'widgets/medium_term_arusdt_listview.dart';
 import 'widgets/medium_term_text_detail.dart';
 import 'widgets/search_button.dart';

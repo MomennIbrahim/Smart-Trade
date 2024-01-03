@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/core/widgets/custom_background.dart';
-import 'package:task_app/features/home/presentation/screens/widgets/drawer_widget.dart';
+import 'package:task_app/features/drawer/presentation/screens/drawer_widget.dart';
 import '../../../home/presentation/screens/widgets/statistics_bot_item.dart';
 
 class MyDeActivateBotsScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class MyDeActivateBotsScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ListView.separated(
-            itemBuilder: (context,index)=> StatisticsItem(),
+            itemBuilder: (context,index)=> ActivateBotItem(),
             separatorBuilder: (context,index)=> CustomSized.sizedHeight10,
             itemCount: 6,
           ),

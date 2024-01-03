@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/core/widgets/custom_background.dart';
-import '../../../home/presentation/screens/widgets/drawer_widget.dart';
+import '../../../drawer/presentation/screens/drawer_widget.dart';
 import 'widgets/bot_item_list_view.dart';
 import 'widgets/trade_row_listview.dart';
 

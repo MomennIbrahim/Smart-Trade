@@ -5,7 +5,7 @@ import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/core/widgets/custom_background.dart';
 import 'package:task_app/features/long_term/presentation/screens/widgets/long_term_arusdt_listview.dart';
 import 'package:task_app/features/long_term/presentation/screens/widgets/long_term_text_detail.dart';
-import '../../../home/presentation/screens/widgets/drawer_widget.dart';
+import '../../../drawer/presentation/screens/drawer_widget.dart';
 import '../../../medium_term/presentation/screens/widgets/search_button.dart';
 
 class LongTermScreen extends StatelessWidget {

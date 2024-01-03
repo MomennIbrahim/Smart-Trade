@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
-import 'package:task_app/core/widgets/divider_under_text.dart';
-import 'package:task_app/features/home/presentation/screens/widgets/drawer_widget.dart';
+import 'package:task_app/features/drawer/presentation/screens/drawer_widget.dart';
 import 'package:task_app/features/home/presentation/screens/widgets/icons_bar.dart';
 import 'package:task_app/features/home/presentation/screens/widgets/status_widget.dart';
 import '../../../../core/utils/sized.dart';
@@ -18,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(appbarText: 'Smart Trade'),
-      drawer: DrawerWidget(currentIndex: 0),
+      drawer: const DrawerWidget(currentIndex: 0),
       body: SingleChildScrollView(
         child: Container(
           decoration: customBackGround(),

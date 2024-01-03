@@ -9,13 +9,11 @@ import 'package:task_app/core/widgets/custom_navigator.dart';
 import '../../../../../core/constace.dart';
 import '../../../../my_activate_bots/presentation/screens/bot_report_screen2.dart';
 
-class StatisticsItem extends StatelessWidget {
-  StatisticsItem({super.key});
+class ActivateBotItem extends StatelessWidget {
+  ActivateBotItem({super.key});
 
   final slider = SleekCircularSlider(
-    onChange: (value) {
-      print(value);
-    },
+    onChange: (value) {},
     appearance: CircularSliderAppearance(
       size: 90.r,
       customColors: CustomSliderColors(
@@ -43,51 +41,58 @@ class StatisticsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 250.w,
-      height: 150.h,
+      height: 140.h,
       child: Card(
           color: Constance.cardColor,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0.w,vertical: 5.h),
-            child: Row(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     slider,
-                    const Spacer(),
+                    CustomSized.sizedWidth10,
+                    Padding(
+                      padding: EdgeInsets.only(top: 10.0.h),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                              'Profile Last Month',
+                              style: TextStyle(color: Constance.cWhite),
+                            ),
+                       CustomSized.sizedHeight10,
+                      const Text(
+                        '+197.5078%',
+                        style: TextStyle(color: Colors.green),
+                      ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
                     Text(
                       'Bullihs Bot',
                       style: Styles.style20,
                     ),
-                  ],
-                ),
-                CustomSized.sizedWidth10,
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Profile Last Month',
-                        style: TextStyle(color: Constance.cWhite),
-                      ),
-                      CustomSized.sizedHeight15,
-                      const Text(
-                        '+197.5078%',
-                        style: TextStyle(color: Constance.cWhite),
-                      ),
-                      const Spacer(),
-                      CustomButton(
+                    CustomSized.sizedWidth15,
+                    Expanded(
+                      child: CustomButton(
+                        radius: 20.r,
                         paddingHorizontal: 0.0,
                         text: 'More Details',
                         onPressed: () {
                           customNavigator(context: context, widget: const BotReportScreen2());
                         },
                         buttonColor: Constance.kPrimaryColor,
-                      )
-                    ],
-                  ),
-                ),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           )),
