@@ -5,15 +5,7 @@ import 'package:task_app/core/constace.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
-import 'package:task_app/features/long_term/presentation/screens/long_term_screen.dart';
-import 'package:task_app/features/my_activate_bots/presentation/screens/my_activate_bots_screen.dart';
-import 'package:task_app/features/my_deactivate_bots/presentation/screens/my_deactivate_bots_screen.dart';
-import 'package:task_app/features/st_wallet/presentation/screens/st_wallet_screen.dart';
 import '../../../../core/widgets/custom_navigator.dart';
-import '../../../medium_term/presentation/screens/medium_term_screen.dart';
-import '../../../my_wallet/my_wallet_screen.dart';
-import '../../../trade_bot/presentation/screens/trade_bot_screen.dart';
-import '../../../home/presentation/screens/home_screen.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({

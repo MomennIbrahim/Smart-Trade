@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import '../../../home/presentation/screens/home_screen.dart';
-import '../../../long_term/presentation/screens/long_term_screen.dart';
-import '../../../medium_term/presentation/screens/medium_term_screen.dart';
 import '../../../my_activate_bots/presentation/screens/my_activate_bots_screen.dart';
-import '../../../my_deactivate_bots/presentation/screens/my_deactivate_bots_screen.dart';
+import '../../../my_activate_bots/presentation/screens/my_deactivate_bots_screen.dart';
 import '../../../my_wallet/my_wallet_screen.dart';
 import '../../../st_wallet/presentation/screens/st_wallet_screen.dart';
+import '../../../term/presentation/screens/long_term_screen.dart';
+import '../../../term/presentation/screens/medium_term_screen.dart';
 import '../../../trade_bot/presentation/screens/trade_bot_screen.dart';
 
 part 'drawer_state.dart';

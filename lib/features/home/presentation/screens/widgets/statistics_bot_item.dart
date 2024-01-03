@@ -9,8 +9,8 @@ import 'package:task_app/core/widgets/custom_navigator.dart';
 import '../../../../../core/constace.dart';
 import '../../../../my_activate_bots/presentation/screens/bot_report_screen2.dart';
 
-class ActivateBotItem extends StatelessWidget {
-  ActivateBotItem({super.key});
+class MyBotsItem extends StatelessWidget {
+  MyBotsItem({super.key});
 
   final slider = SleekCircularSlider(
     onChange: (value) {},

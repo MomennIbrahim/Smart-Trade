@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:task_app/core/constace.dart';
 
 class PointsRow extends StatelessWidget {
   const PointsRow({super.key, required this.text, required this.value});
 
   final String text;
-  final double value;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class PointsRow extends StatelessWidget {
           padding: EdgeInsets.only(left: 16.0.w),
           child: Text(value.toString(),
               style: TextStyle(
-                  color: Colors.white, fontSize: 16.sp)),
+                  color: Constance.kYellowColor, fontSize: 16.sp)),
         ),
       ],
     );

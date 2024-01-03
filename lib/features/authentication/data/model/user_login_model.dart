@@ -93,7 +93,7 @@ class User {
   dynamic fcmToken;
   dynamic imageProfile;
   dynamic imagePayment;
-  int? fees;
+  double? fees;
   dynamic otp;
   int? numberOfUser;
   dynamic exchange;
