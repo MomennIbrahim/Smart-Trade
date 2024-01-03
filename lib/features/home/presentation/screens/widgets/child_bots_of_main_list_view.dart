@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/animated_loading.dart';
+import 'package:task_app/core/widgets/error_text.dart';
 import 'package:task_app/features/home/presentation/controller/child_bots_cubit.dart';
 import '../../../../../core/utils/sized.dart';
 import 'child_bots_of_main_item.dart';
@@ -23,7 +24,7 @@ class ChildBotsOfMainListView extends StatelessWidget {
           itemCount: state.childBotsModel.data!.data!.length,
         );
         }else if (state is ChildBotsFailureState){
-          return Text(state.errMessage.toString(),style: Styles.style18Yellow,);
+          return ErrorText(errMessage: state.errMessage);
         }else{
           return const AnimatedLoading();
         }

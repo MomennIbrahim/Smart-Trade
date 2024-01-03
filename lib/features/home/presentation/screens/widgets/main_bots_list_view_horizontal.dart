@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/animated_loading.dart';
+import 'package:task_app/core/widgets/error_text.dart';
 import 'package:task_app/features/home/presentation/controller/main_bots_cubit.dart';
 import 'package:task_app/features/home/presentation/screens/widgets/main_bots_item.dart';
 
@@ -27,7 +28,7 @@ class MainBotsListViewHorizontal extends StatelessWidget {
           ),
         );
         }else if (state is MainBotsFailureState){
-          return Center(child: Text(state.errMessage,style: Styles.style18Yellow,));
+          return ErrorText(errMessage: state.errMessage);
         }else{
           return const AnimatedLoading();
         }

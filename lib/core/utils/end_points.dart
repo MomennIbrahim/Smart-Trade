@@ -5,4 +5,5 @@ class EndPoints{
   static const getSliders = '/auth/get-sliders';
   static const getMainBots = '/auth/get-main-bots';
   static const getChildBotsOfMain = '/auth/get-childs-of-main/';
+  static const getMyActivateBots = '/auth/get-my-active-bots';
 }

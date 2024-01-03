@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/animated_loading.dart';
 import 'package:task_app/core/widgets/cahed_network.dart';
+import 'package:task_app/core/widgets/error_text.dart';
 import 'package:task_app/features/home/presentation/controller/slider_cubit.dart';
 import 'custom_carousel_slider.dart';
 
@@ -38,10 +39,7 @@ class CarouselSmartTrade extends StatelessWidget {
             }).toList(),
           );
         } else if (state is GetSliderFailureState) {
-          return Text(
-            state.errMessage.toString(),
-            style: Styles.style18Yellow,
-          );
+          return ErrorText(errMessage: state.errMessage);
         } else {
           return const AnimatedLoading();
         }
