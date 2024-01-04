@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:task_app/core/constace.dart';
 import 'package:task_app/core/utils/app_router.dart';
-import 'package:task_app/core/utils/local_storage.dart';
 import 'package:task_app/core/utils/styles.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
@@ -17,8 +17,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
            CircleAvatar(
+             backgroundColor: Colors.transparent,
             radius: 18.r,
-            backgroundImage: const AssetImage('assets/images/channels4_profile.jpg'),
+            backgroundImage: const AssetImage('assets/images/smart-logo-img.png'),
           ),
           SizedBox(
             width: 10.w,
@@ -34,16 +35,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
       centerTitle: true,
       actions: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4.0),
+          padding: EdgeInsets.only(right: 10.0.w),
           child: GestureDetector(
             onTap: (){
-              CacheHelper.removeData(key: 'token').then((value) {
-                GoRouter.of(context).go(AppRouter.kLoginScreen);
-              });
+              GoRouter.of(context).push(AppRouter.kProfileScreen);
             },
             child: CircleAvatar(
-              backgroundColor: Colors.grey[400],
-              child: const Icon(Icons.more_vert),
+              backgroundColor: Colors.white30,
+              child: Icon(Icons.person,color: Constance.kYellowColor,size: 28.r,),
             ),
           ),
         ),

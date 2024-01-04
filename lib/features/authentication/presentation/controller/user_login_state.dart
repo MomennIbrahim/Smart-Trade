@@ -18,3 +18,4 @@ class UserLoginFailureState extends UserLoginState {
 
   UserLoginFailureState(this.errMessage);
 }
+

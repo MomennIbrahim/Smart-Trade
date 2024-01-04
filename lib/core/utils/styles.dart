@@ -31,10 +31,26 @@ abstract class Styles {
     color: Constance.cWhite,
   );
 
+  static TextStyle styleGrey16 = TextStyle(
+    fontSize: 16.sp,
+    color: Colors.white70,
+  );
+
+  static TextStyle styleGreen16 = TextStyle(
+    fontSize: 16.sp,
+    color: Colors.green,
+  );
+
   static TextStyle style18Yellow = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeight.w700,
     color: const Color(0xFFF2A818),
+  );
+
+  static TextStyle style18Red = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+    color: Colors.red,
   );
 
   static TextStyle style18 = TextStyle(

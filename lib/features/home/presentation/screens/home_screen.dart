@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
 import 'package:task_app/features/drawer/presentation/screens/drawer_widget.dart';
-import 'package:task_app/features/home/presentation/screens/widgets/icons_bar.dart';
 import 'package:task_app/features/home/presentation/screens/widgets/status_widget.dart';
 import '../../../../core/utils/sized.dart';
 import '../../../../core/widgets/custom_background.dart';
@@ -18,17 +17,18 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(appbarText: 'Smart Trade'),
-      drawer:  DrawerWidget(currentIndex: DrawerCubit.get(context).currentIndex),
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: customBackGround(),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 0.0.w),
+      drawer: DrawerWidget(currentIndex: DrawerCubit.get(context).currentIndex),
+      body: Container(
+        height: double.infinity,
+        decoration: customBackGround(),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 0.0.w),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSized.sizedHeight20,
-                const IconsBar(),
+                // const IconsBar(),
                 CustomSized.sizedHeight15,
                 const CarouselSmartTrade(),
                 CustomSized.sizedHeight20,

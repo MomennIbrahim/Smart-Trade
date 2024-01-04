@@ -4,6 +4,7 @@ import 'package:task_app/features/authentication/data/model/user_login_model.dar
 import 'package:task_app/features/authentication/data/model/user_register_model.dart';
 
 abstract class BaseAuthenticationRepository {
+
   Future<Either<Failure, UserLoginModel>> userLogin({
     required String email,
     required String password,
@@ -15,4 +16,7 @@ abstract class BaseAuthenticationRepository {
     required String password,
     required String passwordConfirmation,
   });
+
+  // Future<Either<Failure, UserLoginModel>> refreshToken();
+
 }

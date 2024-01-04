@@ -14,7 +14,7 @@ abstract class CustomThemeData {
       sliderTheme: const SliderThemeData(
           activeTrackColor: Colors.blueAccent,
           thumbShape: RoundSliderThumbShape(enabledThumbRadius: 0.0)),
-      fontFamily: 'Lato',
+      fontFamily: 'Open Sans',
       iconTheme: const IconThemeData(color: Colors.white),
       scrollbarTheme: const ScrollbarThemeData().copyWith(
           radius: const Radius.circular(20.0),

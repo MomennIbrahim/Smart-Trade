@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_app/features/authentication/presentation/screens/login_screen.dart';
 import 'package:task_app/features/authentication/presentation/screens/register_screen.dart';
-import 'package:task_app/features/home/data/model/child_bots_model.dart';
-import 'package:task_app/features/home/presentation/screens/child_bots_of_main_screen.dart';
 import 'package:task_app/features/home/presentation/screens/home_screen.dart';
+import 'package:task_app/features/profile_screen/presentation/screens/contact_us_screen.dart';
+import 'package:task_app/features/profile_screen/presentation/screens/profile_screen.dart';
 import 'package:task_app/features/splash/splash_screen.dart';
 
 
@@ -13,6 +13,8 @@ abstract class AppRouter {
   static const kRegisterScreen = '/registerScreen';
   static const kHomeScreen = '/homeScreen';
   static const kChildBotsOfMAinScreen = '/childBotsOfMainScreen';
+  static const kProfileScreen = '/profileScreen';
+  static const kContactUsScreen = '/contactUsScreen';
 
 
 
@@ -40,6 +42,18 @@ abstract class AppRouter {
         path: kHomeScreen,
         builder: (BuildContext context, GoRouterState state) {
           return const HomeScreen();
+        },
+      ),
+      GoRoute(
+        path: kProfileScreen,
+        builder: (BuildContext context, GoRouterState state) {
+          return const ProfileScreen();
+        },
+      ),
+      GoRoute(
+        path: kContactUsScreen,
+        builder: (BuildContext context, GoRouterState state) {
+          return const ContactUsScreen();
         },
       ),
  ]);

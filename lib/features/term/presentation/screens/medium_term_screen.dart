@@ -25,9 +25,10 @@ class MediumTermScreen extends StatelessWidget {
         drawer: DrawerWidget(currentIndex: DrawerCubit
             .get(context)
             .currentIndex),
-        body: SingleChildScrollView(
-          child: Container(
-            decoration: customBackGround(),
+        body: Container(
+          height: double.infinity,
+          decoration: customBackGround(),
+          child: SingleChildScrollView(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

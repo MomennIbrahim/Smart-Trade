@@ -65,4 +65,24 @@ class AuthenticationRepositoryImplementation
       }
     }
   }
+
+  //
+  // @override
+  // Future<Either<Failure, UserLoginModel>> refreshToken() async{
+  //   try {
+  //     var response = await apiService.postData(
+  //       endPoint: EndPoints.refresh,
+  //       token: Constance.accessToken,
+  //     );
+  //
+  //     UserLoginModel userModel = UserLoginModel.fromJson(response);
+  //     return right(userModel);
+  //   } catch (e) {
+  //     if (e is DioException) {
+  //       return left(ServerFailure.fromDioError(e));
+  //     } else {
+  //       return left(ServerFailure(e.toString()));
+  //     }
+  //   }
+  // }
 }

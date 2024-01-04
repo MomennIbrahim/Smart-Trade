@@ -50,4 +50,6 @@ class UserLoginCubit extends Cubit<UserLoginState> {
     isVisibility? icon = const Icon(Icons.visibility) :  icon = const Icon(Icons.visibility_off);
     emit(ChangeVisibilityState());
   }
+
+
 }

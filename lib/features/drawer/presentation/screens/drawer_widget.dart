@@ -39,7 +39,7 @@ class DrawerWidget extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       backgroundImage: AssetImage(
-                          'assets/images/channels4_profile.jpg'),
+                          'assets/images/smart-logo-img.png'),
                     ),
                     SizedBox(
                       width: 10.w,

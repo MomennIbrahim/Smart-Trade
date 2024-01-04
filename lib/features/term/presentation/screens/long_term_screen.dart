@@ -24,11 +24,12 @@ class LongTermScreen extends StatelessWidget {
         drawer: DrawerWidget(currentIndex: DrawerCubit
             .get(context)
             .currentIndex),
-        body: SingleChildScrollView(
-          child: Container(
-            decoration: customBackGround(),
-            child: Padding(
-                padding: const EdgeInsets.all(16.0),
+        body: Container(
+          height: double.infinity,
+          decoration: customBackGround(),
+          child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -41,8 +42,8 @@ class LongTermScreen extends StatelessWidget {
                       CustomSized.sizedHeight24,
                       CustomSized.sizedHeight20,
                       const LongTermListView(),
-                    ])),
-          ),
+                    ]),
+              )),
         ),
       ),
     );

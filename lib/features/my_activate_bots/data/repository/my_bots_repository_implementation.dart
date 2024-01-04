@@ -18,7 +18,6 @@ class MyBotsRepositoryImplementation implements BaseMyBotsRepository{
     try {
       var response = await apiService.getData(
         endPoint: EndPoints.getMyActivateBots,
-        token: Constance.accessToken!,
       );
 
       ChildBotsModel childBotsModel = ChildBotsModel.fromJson(response);
@@ -37,7 +36,6 @@ class MyBotsRepositoryImplementation implements BaseMyBotsRepository{
     try {
       var response = await apiService.getData(
         endPoint: EndPoints.getMyDeActivateBots,
-        token: Constance.accessToken!,
       );
 
       ChildBotsModel childBotsModel = ChildBotsModel.fromJson(response);

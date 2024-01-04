@@ -5,10 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/constace.dart';
 import 'package:task_app/core/utils/theme_data.dart';
 import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
-import 'package:task_app/features/home/data/repository/home_repository_implementation.dart';
-import 'package:task_app/features/home/presentation/controller/main_bots_cubit.dart';
-import 'package:task_app/features/home/presentation/controller/slider_cubit.dart';
-import 'package:task_app/features/splash/splash_screen.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/bloc_observe.dart';
 import 'core/utils/local_storage.dart';
@@ -44,17 +40,11 @@ class MyApp extends StatelessWidget {
               BlocProvider(
                 create: (context) => DrawerCubit(),
               ),
-              BlocProvider(
-                create: (context) => SliderCubit(getIt.get<HomeRepositoryImplementation>())..getSliders(),
-              ),
-              BlocProvider(
-                create: (context) => MainBotsCubit(getIt.get<HomeRepositoryImplementation>())..getMainBots(),
-              ),
             ],
             child: MaterialApp.router(
               routerConfig: AppRouter.router,
               debugShowCheckedModeBanner: false,
-              title: 'Smart Trade',
+              title: 'Rubik',
               themeMode: ThemeMode.dark,
               theme: CustomThemeData.themeData,
             ),

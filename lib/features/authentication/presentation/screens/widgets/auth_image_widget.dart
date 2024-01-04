@@ -16,7 +16,7 @@ class AuthImageWidget extends StatelessWidget {
                   bottomRight: Radius.circular(85.r),
                   bottomLeft: Radius.circular(85.r)),
               child: const Image(
-                image: AssetImage('assets/images/log.jpg'),
+                image: AssetImage('assets/images/logo.png'),
                 fit: BoxFit.cover,
               ),
             ))

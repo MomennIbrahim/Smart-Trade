@@ -53,13 +53,13 @@ class _SplashScreenState extends State<SplashScreen>
                 return FadeTransition(
                   opacity: fadeInAnimation,
                   child: Container(
-                    height: 300,
-                    width: 200,
+                    height: 200.h,
+                    width: 200.w,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100.r),
                         image: const DecorationImage(
                           image: AssetImage(
-                            'assets/images/channels4_profile.jpg',
+                            'assets/images/smart-logo-img.png',
                           ),
                           fit: BoxFit.cover,
                         )),
