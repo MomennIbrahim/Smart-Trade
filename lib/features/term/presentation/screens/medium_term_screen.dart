@@ -14,38 +14,40 @@ import 'widgets/medium_term_card_listview.dart';
 import 'widgets/medium_term_text_detail.dart';
 
 class MediumTermScreen extends StatelessWidget {
-  const MediumTermScreen({super.key,});
+  const MediumTermScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MediumTermCubit(getIt.get<TermRepositoryImplementation>())..getMediumTerm(),
+      create: (context) =>
+          MediumTermCubit(getIt.get<TermRepositoryImplementation>())
+            ..getMediumTerm(),
       child: Scaffold(
         appBar: const CustomAppBar(appbarText: 'Medium Term'),
-        drawer: DrawerWidget(currentIndex: DrawerCubit
-            .get(context)
-            .currentIndex),
+        drawer:
+            DrawerWidget(currentIndex: DrawerCubit.get(context).currentIndex),
         body: Container(
           height: double.infinity,
           decoration: customBackGround(),
           child: SingleChildScrollView(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 16.0.w),
-                    child: Text(
-                      'Medium Term',
-                      style: Styles.style35,
-                    ),
-                  ),
-                  CustomSized.sizedHeight20,
-                  const MediumTermTextDetail(),
-                  CustomSized.sizedHeight24,
-                  CustomSized.sizedHeight20,
-                  const MediumTermListView(),
-                  CustomSized.sizedHeight20,
-                ]),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                child: Text(
+                  'Medium Term',
+                  style: Styles.style35,
+                ),
+              ),
+              CustomSized.sizedHeight20,
+              const MediumTermTextDetail(),
+              CustomSized.sizedHeight24,
+              CustomSized.sizedHeight20,
+              const MediumTermListView(),
+              CustomSized.sizedHeight20,
+            ]),
           ),
         ),
       ),

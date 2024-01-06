@@ -8,6 +8,7 @@ import 'package:task_app/core/widgets/custom_background.dart';
 import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
 import 'package:task_app/features/term/data/repository/term_repository_implementation.dart';
 import 'package:task_app/features/term/presentation/controller/long_term_cubit/long_term_cubit.dart';
+import 'package:task_app/features/term/presentation/screens/widgets/long_term_text.dart';
 import '../../../drawer/presentation/screens/drawer_widget.dart';
 import 'widgets/long_term_card_listview.dart';
 import 'widgets/medium_term_text_detail.dart';
@@ -38,7 +39,7 @@ class LongTermScreen extends StatelessWidget {
                         style: Styles.style35,
                       ),
                       CustomSized.sizedHeight20,
-                      const MediumTermTextDetail(),
+                      const LongTermTextDetail(),
                       CustomSized.sizedHeight24,
                       CustomSized.sizedHeight20,
                       const LongTermListView(),
