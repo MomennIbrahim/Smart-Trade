@@ -16,3 +16,4 @@ class ChildBotsFailureState extends ChildBotsState {
 
   ChildBotsFailureState(this.errMessage);
 }
+

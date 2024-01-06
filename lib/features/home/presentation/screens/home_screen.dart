@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:marquee/marquee.dart';
+import 'package:task_app/core/constace.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
 import 'package:task_app/features/drawer/presentation/screens/drawer_widget.dart';
+import 'package:task_app/features/home/presentation/screens/widgets/custom_marquee_text.dart';
 import 'package:task_app/features/home/presentation/screens/widgets/status_widget.dart';
 import '../../../../core/utils/sized.dart';
 import '../../../../core/widgets/custom_background.dart';
@@ -28,6 +31,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSized.sizedHeight20,
+                const CustomMarqueeText(),
                 // const IconsBar(),
                 CustomSized.sizedHeight15,
                 const CarouselSmartTrade(),

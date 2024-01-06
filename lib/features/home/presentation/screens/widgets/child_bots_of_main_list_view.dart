@@ -16,13 +16,15 @@ class ChildBotsOfMainListView extends StatelessWidget {
     return BlocBuilder<ChildBotsCubit, ChildBotsState>(
       builder: (context, state) {
         if(state is ChildBotsSuccessState) {
-          return ListView.separated(
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (context, index) =>
-           ChildBotsOfMainItem(childBotsModel: state.childBotsModel, index: index,),
-          separatorBuilder: (context, index) => CustomSized.sizedHeight10,
-          itemCount: state.childBotsModel.data!.data!.length,
-                  );
+          return Expanded(
+            child: ListView.separated(
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (context, index) =>
+             ChildBotsOfMainItem(childBotsModel: state.childBotsModel, index: index,),
+            separatorBuilder: (context, index) => CustomSized.sizedHeight10,
+            itemCount: state.childBotsModel.data!.data!.length,
+                    ),
+          );
         }else if (state is ChildBotsFailureState){
           return ErrorText(errMessage: state.errMessage);
         }else{

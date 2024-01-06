@@ -14,13 +14,13 @@ class ChildBotsCubit extends Cubit<ChildBotsState> {
 
   final BaseHomeRepository baseHomeRepository;
 
-  ScrollController scrollController = ScrollController();
+  int pageNum = 1;
 
   void getChildBotsOfMain({required mainBotId}) async {
     emit(ChildBotsLoadingState());
 
     var result = await baseHomeRepository.getChildBotsOfMain(
-        mainBotId: mainBotId, pageNum: 1);
+        mainBotId: mainBotId,pageNum: pageNum);
 
     result.fold((failure) {
       emit(ChildBotsFailureState(failure.errMessage));
@@ -28,4 +28,14 @@ class ChildBotsCubit extends Cubit<ChildBotsState> {
       emit(ChildBotsSuccessState(childBotsModel));
     });
   }
+
+  void nextPage({required int mainBotId}){
+    pageNum++;
+    getChildBotsOfMain(mainBotId: mainBotId);
+  }
+  void previewPage({required int mainBotId}){
+    pageNum--;
+    getChildBotsOfMain(mainBotId: mainBotId);
+  }
+
 }
