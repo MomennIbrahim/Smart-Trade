@@ -5,10 +5,10 @@ import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/core/widgets/custom_background.dart';
 import 'package:task_app/core/widgets/custom_button.dart';
-import 'package:task_app/features/profile_screen/presentation/screens/widgets/confirm_new_passowrd_text_field.dart';
-import 'package:task_app/features/profile_screen/presentation/screens/widgets/new_passowrd_text_field.dart';
-import 'package:task_app/features/profile_screen/presentation/screens/widgets/old_passowrd_text_field.dart';
+import 'package:task_app/features/profile/presentation/screens/widgets/old_passowrd_text_field.dart';
 import '../../../../core/utils/styles.dart';
+import 'widgets/confirm_new_passowrd_text_field.dart';
+import 'widgets/new_passowrd_text_field.dart';
 
 class ChangePasswordScreen extends StatelessWidget {
   ChangePasswordScreen({super.key});

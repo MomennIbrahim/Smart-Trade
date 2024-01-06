@@ -50,10 +50,13 @@ class HomeRepositoryImplementation implements BaseHomeRepository {
 
   @override
   Future<Either<Failure, ChildBotsModel>> getChildBotsOfMain(
-      {required int mainBotId}) async {
+      {required int mainBotId,required int pageNum}) async {
     try {
       var response = await apiService.getData(
         endPoint: '${EndPoints.getChildBotsOfMain}$mainBotId',
+        query: {
+          'page' : pageNum,
+        }
       );
       ChildBotsModel childBotsOfMainModel = ChildBotsModel.fromJson(response);
       return right(childBotsOfMainModel);

@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:task_app/features/authentication/presentation/screens/login_screen.dart';
 import 'package:task_app/features/authentication/presentation/screens/register_screen.dart';
 import 'package:task_app/features/home/presentation/screens/home_screen.dart';
-import 'package:task_app/features/profile_screen/presentation/screens/contact_us_screen.dart';
-import 'package:task_app/features/profile_screen/presentation/screens/profile_screen.dart';
 import 'package:task_app/features/splash/splash_screen.dart';
+import '../../features/profile/presentation/screens/contact_us_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
 
 
 abstract class AppRouter {
@@ -15,8 +15,6 @@ abstract class AppRouter {
   static const kChildBotsOfMAinScreen = '/childBotsOfMainScreen';
   static const kProfileScreen = '/profileScreen';
   static const kContactUsScreen = '/contactUsScreen';
-
-
 
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[

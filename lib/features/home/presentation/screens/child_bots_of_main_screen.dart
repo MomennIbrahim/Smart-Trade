@@ -15,8 +15,11 @@ class ChildBotsOfMainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ChildBotsCubit(getIt.get<HomeRepositoryImplementation>())..getChildBotsOfMain(mainBotId: index),
+      create: (context) =>
+          ChildBotsCubit(getIt.get<HomeRepositoryImplementation>())
+            ..getChildBotsOfMain(mainBotId: index),
       child: Scaffold(
+
         appBar: AppBar(
           title: const Text('Child bots of main'),
           toolbarHeight: 70.h,

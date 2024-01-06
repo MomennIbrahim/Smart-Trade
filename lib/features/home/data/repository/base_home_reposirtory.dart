@@ -10,8 +10,8 @@ abstract class BaseHomeRepository {
 
   Future<Either<Failure, MainBotsModel>> getMainBot();
 
-  Future<Either<Failure, ChildBotsModel>> getChildBotsOfMain({required int mainBotId});
+  Future<Either<Failure, ChildBotsModel>> getChildBotsOfMain(
+      {required int mainBotId, required int pageNum});
 
   Future<Either<Failure, UserLoginModel>> refreshToken();
-
 }

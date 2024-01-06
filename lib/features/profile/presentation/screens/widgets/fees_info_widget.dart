@@ -24,7 +24,7 @@ class FeesInfoWidget extends StatelessWidget {
             children: [
               Text(
                 value,
-                style: Styles.style23,
+                style: Styles.style23.copyWith(color: Colors.green,fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
               Text(

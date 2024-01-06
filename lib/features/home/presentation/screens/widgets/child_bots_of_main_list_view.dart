@@ -22,7 +22,7 @@ class ChildBotsOfMainListView extends StatelessWidget {
            ChildBotsOfMainItem(childBotsModel: state.childBotsModel, index: index,),
           separatorBuilder: (context, index) => CustomSized.sizedHeight10,
           itemCount: state.childBotsModel.data!.data!.length,
-        );
+                  );
         }else if (state is ChildBotsFailureState){
           return ErrorText(errMessage: state.errMessage);
         }else{

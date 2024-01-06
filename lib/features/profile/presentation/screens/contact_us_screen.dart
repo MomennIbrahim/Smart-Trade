@@ -6,9 +6,9 @@ import 'package:task_app/core/utils/service_locator.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/custom_background.dart';
-import 'package:task_app/features/profile_screen/data/repository/profile_repository_implementation.dart';
-import 'package:task_app/features/profile_screen/presentation/controller/setting_cubit.dart';
-import 'package:task_app/features/profile_screen/presentation/screens/widgets/logo_card_widget.dart';
+import '../../data/repository/profile_repository_implementation.dart';
+import '../controller/setting_cubit.dart';
+import 'widgets/logo_card_widget.dart';
 
 class ContactUsScreen extends StatelessWidget {
   const ContactUsScreen({super.key});
@@ -45,7 +45,7 @@ class ContactUsScreen extends StatelessWidget {
                       CustomSized.sizedHeight15,
                       const LogoCardWidget(image: 'assets/images/youtube-logo-png-2075.png', text: 'Youtube'),
                       CustomSized.sizedHeight15,
-                      const LogoCardWidget(image: 'assets/images/telepon-7729.png', text: 'Phone'),
+                      const LogoCardWidget(image: 'assets/images/telepon-7735.png', text: 'Phone'),
                       CustomSized.sizedHeight15,
                       Text('If you need more support, Visit our website:',style: Styles.styleYellow14,),
                       Text('http://www.smart-trade-bot.com/',style: Styles.style16.copyWith(color: Constance.kPrimaryColor),),

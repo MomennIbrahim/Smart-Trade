@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:task_app/features/home/data/repository/base_home_reposirtory.dart';
@@ -13,15 +14,17 @@ class ChildBotsCubit extends Cubit<ChildBotsState> {
 
   final BaseHomeRepository baseHomeRepository;
 
-  void getChildBotsOfMain({required mainBotId})async{
+  ScrollController scrollController = ScrollController();
 
+  void getChildBotsOfMain({required mainBotId}) async {
     emit(ChildBotsLoadingState());
 
-    var result = await baseHomeRepository.getChildBotsOfMain(mainBotId: mainBotId);
+    var result = await baseHomeRepository.getChildBotsOfMain(
+        mainBotId: mainBotId, pageNum: 1);
 
-    result.fold((failure){
+    result.fold((failure) {
       emit(ChildBotsFailureState(failure.errMessage));
-    }, (childBotsModel){
+    }, (childBotsModel) {
       emit(ChildBotsSuccessState(childBotsModel));
     });
   }

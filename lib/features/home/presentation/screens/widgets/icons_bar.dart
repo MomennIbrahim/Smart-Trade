@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_app/core/widgets/custom_navigator.dart';
-import 'package:task_app/features/profile_screen/presentation/screens/profile_screen.dart';
+
+import '../../../../profile/presentation/screens/profile_screen.dart';
 
 class IconsBar extends StatelessWidget {
   const IconsBar({super.key});
