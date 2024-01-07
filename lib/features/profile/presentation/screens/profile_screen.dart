@@ -18,8 +18,7 @@ import 'widgets/person_info_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-  // var profileNameController = TextEditingController();
-  // var profileEmailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -63,24 +62,6 @@ class ProfileScreen extends StatelessWidget {
                           CustomSized.sizedHeight24,
                           const Divider(),
                           CustomSized.sizedHeight20,
-                          // CustomSized.sizedHeight50,
-                          // Text(
-                          //   'Name',
-                          //   style: Styles.style18,
-                          // ),
-                          // CustomSized.sizedHeight10,
-                          // ProfileNameTextField(
-                          //     profileNameController: profileNameController),
-                          // CustomSized.sizedHeight20,
-                          // Text(
-                          //   'Email',
-                          //   style: Styles.style18,
-                          // ),
-                          // CustomSized.sizedHeight10,
-                          // ProfileEmailTextField(
-                          //     profileEmailController: profileEmailController),
-                          // const ChangePasswordButton(),
-                          // CustomSized.sizedHeight24,
                           const LogoutWidget(),
                         ],
                       ),

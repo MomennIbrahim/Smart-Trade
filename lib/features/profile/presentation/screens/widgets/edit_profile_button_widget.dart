@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 import 'profile_button_widget.dart';
 
 class EditProfileButtonWidget extends StatelessWidget {
@@ -10,7 +11,9 @@ class EditProfileButtonWidget extends StatelessWidget {
     return ProfileButtonWidget(
       text: 'Edit Profile',
       icon: Icons.edit,
-      onPressed: () {},
+      onPressed: () {
+        GoRouter.of(context).push(AppRouter.kEditProfileScreen);
+      },
     );
   }
 }
