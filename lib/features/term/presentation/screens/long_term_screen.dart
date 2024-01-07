@@ -11,7 +11,6 @@ import 'package:task_app/features/term/presentation/controller/long_term_cubit/l
 import 'package:task_app/features/term/presentation/screens/widgets/long_term_text.dart';
 import '../../../drawer/presentation/screens/drawer_widget.dart';
 import 'widgets/long_term_card_listview.dart';
-import 'widgets/medium_term_text_detail.dart';
 
 class LongTermScreen extends StatelessWidget {
   const LongTermScreen({super.key,});
