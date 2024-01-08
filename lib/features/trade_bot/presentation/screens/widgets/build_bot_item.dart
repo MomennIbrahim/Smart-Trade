@@ -50,7 +50,7 @@ class BuildBotItem extends StatelessWidget {
                       width: 80.w,
                       height: 80.h,
                       fit: BoxFit.cover,
-                      image: const AssetImage('assets/images/log.jpg'),
+                      image: const AssetImage('assets/images/logo.png'),
                     ),
                   ),
                 ),

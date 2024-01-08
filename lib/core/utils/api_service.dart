@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:task_app/core/constace.dart';
-import 'package:task_app/features/authentication/data/model/user_login_model.dart';
 
 class ApiService {
   final _baseUrl = 'https://www.smart-trade-bot.com/api';
@@ -10,13 +9,12 @@ class ApiService {
 
   Future<Map<String, dynamic>> postData({
     required String endPoint,
-    String? token,
     Map<String, dynamic>? query,
     Map<String, dynamic>? data,
   }) async {
     _dio.options.headers = {
       'Accept': 'application/json',
-      'Authorization': token,
+      'Authorization': 'Bearer ${Constance.accessToken}',
     };
 
     var response = await _dio.post(
@@ -29,43 +27,29 @@ class ApiService {
 
   Future<Map<String, dynamic>> getData({
     required String endPoint,
-    Function?  onErrorInterceptor,
+    required String token,
+    Function? onErrorInterceptor,
     Map<String, dynamic>? query,
   }) async {
-    _dio.options.headers = {
-      'Accept': 'application/json',
-      'Authorization': 'Bearer ${Constance.accessToken}',
-      'lang': 'en',
-    };
-    // _dio.interceptors.add(InterceptorsWrapper(
-    //     onRequest: (options, header) {},
-    //     onError: (DioException err, ErrorInterceptorHandler handler) async {
-    //       // Check if the error is due to an unauthorized (401) response
-    //       if (err.response?.statusCode == 401) {
-    //         // Attempt to refresh the token
-    //
-    //         onErrorInterceptor!();
-    //
-    //
-    //         //   final newToken =  Constance.accessToken;
-    //         //
-    //         //   if (newToken != null) {
-    //         //     // Retry the original request with the new token
-    //         //     err.requestOptions.headers['Authorization'] = 'Bearer $newToken';
-    //         //     _dio.fetch(err.requestOptions).then((response) {
-    //         //       handler.next(response.data);
-    //         //     });
-    //         //   } else {
-    //         //     // If token refresh fails, proceed with the original error
-    //         //     handler.next(err);
-    //         //   }
-    //         // } else {
-    //         //   // Continue with the original error for non-401 responses
-    //         //   handler.next(err);
-    //         // }
-    //       }
-    //     }));
 
+    // _dio.interceptors
+    //     .add(InterceptorsWrapper(onRequest: (options, handler) async {
+    //       print(options.data);
+    //       print(options.method);
+    //   return onRequest(options, handler);
+    // }, onError: (DioException err, ErrorInterceptorHandler handler) async {
+    //   // Check if the error is due to an unauthorized (401) response
+    //   if (err.response?.statusCode == 401 || err.response?.statusCode == 403) {
+    //     await refreshToken();
+    //     return _retry(err.requestOptions);
+    //   }
+    // }));
+
+    _dio.options = BaseOptions(headers: {
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $token}',
+      'lang': 'en',
+    });
     var response = await _dio.get(
       options: Options(
         followRedirects: true,
@@ -76,4 +60,40 @@ class ApiService {
     );
     return response.data;
   }
+
+  // void onRequest(
+  //     RequestOptions options, RequestInterceptorHandler handler) async {
+  //   if (!options.headers.containsKey("Authorization")) {
+  //     var token = Constance.accessToken;
+  //     options.headers = {
+  //       'Accept': 'application/json',
+  //       'Authorization': 'Bearer $token',
+  //       'lang': 'en',
+  //     };
+  //   }
+  //   handler.next(options);
+  // }
+
+  // Future<void> refreshToken() async {
+  //   print('----------------- Refresh Token --------------------');
+  //   final refreshToken = Constance.accessToken;
+  //   final response = await _dio.post(EndPoints.refresh,
+  //       options: Options(headers: {
+  //         'Authorization': 'Bearer $refreshToken',
+  //       }));
+  //   if (response.statusCode == 200) {
+  //     Constance.accessToken = response.data['access_token'];
+  //   }
+  // }
+  //
+  // Future<dynamic> _retry(RequestOptions requestOptions) async {
+  //   final options = Options(
+  //     method: requestOptions.method,
+  //     headers: requestOptions.headers,
+  //   );
+  //   return _dio.request<dynamic>(requestOptions.path,
+  //       data: requestOptions.data,
+  //       queryParameters: requestOptions.queryParameters,
+  //       options: options);
+  // }
 }

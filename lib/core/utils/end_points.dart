@@ -12,4 +12,5 @@ class EndPoints{
   static const getSetting = '/auth/get-setting';
   static const getUserProfile = '/auth/user-profile';
   static const getConfiguration = '/auth/get-configration';
+  static const updateUserProfile = '/auth/update-profile';
 }

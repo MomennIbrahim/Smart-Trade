@@ -75,7 +75,7 @@ class TradeBotScreen extends StatelessWidget {
       //   ),
       // ),
       appBar: const CustomAppBar(appbarText: 'Trade Bot'),
-      drawer: DrawerWidget(currentIndex: 1),
+      drawer: const DrawerWidget(currentIndex: 1),
       body: SingleChildScrollView(
         child: Container(
           decoration: customBackGround(),

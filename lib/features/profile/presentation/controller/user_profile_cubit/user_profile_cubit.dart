@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:task_app/features/profile/data/model/user_profile_model.dart';
@@ -13,6 +14,8 @@ class UserProfileCubit extends Cubit<UserProfileState> {
 
   final BaseProfileRepository baseProfileRepository;
 
+  UserProfileModel? model;
+
 
   void getUserProfile()async{
 
@@ -23,7 +26,7 @@ class UserProfileCubit extends Cubit<UserProfileState> {
     result.fold((failure){
       emit(UserProfileFailureState(failure.errMessage));
     }, (userProfileModel){
-      print(userProfileModel.name);
+      model = userProfileModel;
       emit(UserProfileSuccessState(userProfileModel));
     });
 

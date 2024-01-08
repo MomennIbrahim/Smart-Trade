@@ -7,6 +7,7 @@ import 'package:task_app/features/home/data/model/child_bots_model.dart';
 import 'package:task_app/features/home/data/model/main_bots_model.dart';
 import 'package:task_app/features/home/data/model/sliders_model.dart';
 import 'package:task_app/features/home/data/repository/base_home_reposirtory.dart';
+import '../../../../core/constace.dart';
 import '../../../../core/utils/end_points.dart';
 
 class HomeRepositoryImplementation implements BaseHomeRepository {
@@ -19,6 +20,7 @@ class HomeRepositoryImplementation implements BaseHomeRepository {
     try {
       var response = await apiService.getData(
         endPoint: EndPoints.getSliders,
+          token: Constance.accessToken!
       );
       SlidersModel slidersModel = SlidersModel.fromJson(response);
       return right(slidersModel);
@@ -36,6 +38,7 @@ class HomeRepositoryImplementation implements BaseHomeRepository {
     try {
       var response = await apiService.getData(
         endPoint: EndPoints.getMainBots,
+          token: Constance.accessToken!
       );
       MainBotsModel mainBotsModel = MainBotsModel.fromJson(response);
       return right(mainBotsModel);
@@ -54,7 +57,8 @@ class HomeRepositoryImplementation implements BaseHomeRepository {
     try {
       var response = await apiService.getData(
         endPoint: '${EndPoints.getChildBotsOfMain}$mainBotId',
-        query: {
+          token: Constance.accessToken!,
+          query: {
           'page' : pageNum,
         }
       );

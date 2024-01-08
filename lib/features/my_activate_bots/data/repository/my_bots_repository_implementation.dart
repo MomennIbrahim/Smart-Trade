@@ -17,6 +17,7 @@ class MyBotsRepositoryImplementation implements BaseMyBotsRepository{
   Future<Either<Failure, ChildBotsModel>> getMyActivateBot() async{
     try {
       var response = await apiService.getData(
+        token: Constance.accessToken!,
         endPoint: EndPoints.getMyActivateBots,
       );
 
@@ -36,6 +37,7 @@ class MyBotsRepositoryImplementation implements BaseMyBotsRepository{
     try {
       var response = await apiService.getData(
         endPoint: EndPoints.getMyDeActivateBots,
+          token: Constance.accessToken!
       );
 
       ChildBotsModel childBotsModel = ChildBotsModel.fromJson(response);

@@ -9,6 +9,8 @@ import 'core/utils/app_router.dart';
 import 'core/utils/bloc_observe.dart';
 import 'core/utils/local_storage.dart';
 import 'core/utils/service_locator.dart';
+import 'features/profile/data/repository/profile_repository_implementation.dart';
+import 'features/profile/presentation/controller/user_profile_cubit/user_profile_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +41,10 @@ class MyApp extends StatelessWidget {
             providers: [
               BlocProvider(
                 create: (context) => DrawerCubit(),
+              ),
+              BlocProvider(
+                create: (context) => UserProfileCubit(getIt.get<ProfileRepositoryImplementation>())
+                  ..getUserProfile(),
               ),
             ],
             child: MaterialApp.router(

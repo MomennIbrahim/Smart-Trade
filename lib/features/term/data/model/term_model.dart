@@ -90,5 +90,5 @@ class DataModel {
   String? priceNow;
   int? statusFree;
   String? updatedAt;
-  String? profit;
+  dynamic profit;
 }

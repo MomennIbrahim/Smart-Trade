@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:task_app/core/constace.dart';
+import 'package:task_app/core/utils/styles.dart';
 import 'out_line_input_border.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -36,6 +39,7 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         obscureText: obscureText,
           controller: controller,
+          style: Styles.styleBold14,
           keyboardType: keyBoardType,
           onFieldSubmitted: hasOnSubmitted
               ? (value) {
