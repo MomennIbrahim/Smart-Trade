@@ -18,7 +18,7 @@ class MyActivateBotsScreen extends StatelessWidget {
       create: (context) => ActivateBotsCubit(getIt.get<MyBotsRepositoryImplementation>())
         ..getActivateBots(),
       child: Scaffold(
-        appBar: const CustomAppBar(appbarText: 'My Activate Bots'),
+        appBar: CustomAppBar(appbarText: 'My Activate Bots',),
         drawer: DrawerWidget(currentIndex: DrawerCubit
             .get(context)
             .currentIndex),

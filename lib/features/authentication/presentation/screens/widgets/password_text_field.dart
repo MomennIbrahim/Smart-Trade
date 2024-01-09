@@ -18,6 +18,7 @@ class PasswordTextField extends StatelessWidget {
       obscureText: obscure,
       labelColor: Colors.black54,
       fillColor: Colors.blueGrey[100]!,
+      style: const TextStyle(color: Colors.black),
       controller: passwordController,
       keyBoardType: TextInputType.visiblePassword,
       labelText: 'Enter password',

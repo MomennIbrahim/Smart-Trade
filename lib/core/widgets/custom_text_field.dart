@@ -18,6 +18,8 @@ class CustomTextFormField extends StatelessWidget {
     this.hasOnSubmitted = false,
     this.fillColor = const Color(0xff0E0E23),
     this.labelColor = Colors.white38,
+    this.focusNode,
+    this.style,
   });
 
   final TextEditingController controller;
@@ -30,6 +32,8 @@ class CustomTextFormField extends StatelessWidget {
   final Color fillColor;
   final Color labelColor;
   final Widget? suffixIcon;
+  final FocusNode? focusNode;
+  final TextStyle? style;
 
 
   @override
@@ -37,9 +41,10 @@ class CustomTextFormField extends StatelessWidget {
     return SizedBox(
       height: 55.h,
       child: TextFormField(
+        focusNode: focusNode,
         obscureText: obscureText,
           controller: controller,
-          style: Styles.styleBold14,
+          style: style?? Styles.styleBold14,
           keyboardType: keyBoardType,
           onFieldSubmitted: hasOnSubmitted
               ? (value) {

@@ -5,6 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/constace.dart';
 import 'package:task_app/core/utils/theme_data.dart';
 import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
+import 'package:task_app/features/profile/presentation/controller/logout_cubit/logout_cubit.dart';
+import 'package:task_app/features/term/data/repository/term_repository_implementation.dart';
+import 'package:task_app/features/term/presentation/controller/configuration_cubit/configuration_cubit.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/bloc_observe.dart';
 import 'core/utils/local_storage.dart';
@@ -45,6 +48,12 @@ class MyApp extends StatelessWidget {
               BlocProvider(
                 create: (context) => UserProfileCubit(getIt.get<ProfileRepositoryImplementation>())
                   ..getUserProfile(),
+              ),
+              BlocProvider(
+                create: (context) => LogoutCubit(getIt.get<ProfileRepositoryImplementation>()),
+              ),
+              BlocProvider(
+                create: (context) => ConfigurationCubit(getIt.get<TermRepositoryImplementation>())..getConfiguration(),
               ),
             ],
             child: MaterialApp.router(

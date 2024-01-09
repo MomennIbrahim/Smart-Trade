@@ -11,6 +11,7 @@ class EmailTextField extends StatelessWidget {
     return CustomTextFormField(
       labelColor: Colors.black54,
       fillColor: Colors.blueGrey[100]!,
+      style: const TextStyle(color: Colors.black),
       controller: emailController,
       keyBoardType: TextInputType.emailAddress,
       labelText: 'Enter email address',

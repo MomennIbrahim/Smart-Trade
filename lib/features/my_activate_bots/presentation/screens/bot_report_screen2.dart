@@ -9,10 +9,10 @@ class BotReportScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(appbarText: 'Bot Report'),
+      appBar: const CustomAppBar(appbarText: 'Bot Report',),
       body: Container(
         decoration: customBackGround(),
-        child: BotReportListView(),
+        child: const BotReportListView(),
       ),
     );
   }

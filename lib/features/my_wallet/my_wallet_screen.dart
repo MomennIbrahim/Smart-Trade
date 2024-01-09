@@ -4,7 +4,9 @@ import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/custom_app_bar.dart';
 import 'package:task_app/core/widgets/custom_background.dart';
+import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
 import '../drawer/presentation/screens/drawer_widget.dart';
+import '../term/presentation/controller/configuration_cubit/configuration_cubit.dart';
 import 'presentation/screens/widgets/api_Passpharse_field.dart';
 import 'presentation/screens/widgets/api_key_field.dart';
 import 'presentation/screens/widgets/api_secret_field.dart';
@@ -22,8 +24,8 @@ class MyWalletScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(appbarText: 'My Wallet'),
-      drawer: DrawerWidget(currentIndex: 4),
+      appBar: CustomAppBar(appbarText: 'My Wallet',),
+      drawer: DrawerWidget(currentIndex: DrawerCubit.get(context).currentIndex),
       body: Container(height: double.infinity,
         decoration: customBackGround(),
         child: Padding(

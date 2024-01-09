@@ -15,19 +15,14 @@ class MediumTermTextDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          ConfigurationCubit(getIt.get<TermRepositoryImplementation>())
-            ..getConfiguration(),
-      child: BlocBuilder<ConfigurationCubit, ConfigurationState>(
-        builder: (context, state) {
-          if (ConfigurationCubit.get(context).model != null) {
-            return TermTextLorem(text: ConfigurationCubit.get(context).model!.data!.mediumTerm.toString());
-          } else {
-            return const AnimatedLoading();
-          }
-        },
-      ),
+    return BlocBuilder<ConfigurationCubit, ConfigurationState>(
+      builder: (context, state) {
+        if (ConfigurationCubit.get(context).model != null) {
+          return TermTextLorem(text: ConfigurationCubit.get(context).model!.data!.mediumTerm.toString());
+        } else {
+          return const AnimatedLoading();
+        }
+      },
     );
   }
 }

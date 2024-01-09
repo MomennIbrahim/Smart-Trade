@@ -10,11 +10,10 @@ import '../../../../core/utils/sized.dart';
 class StWalletScreen extends StatelessWidget {
   const StWalletScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(appbarText: 'ST Wallet'),
+      appBar: const CustomAppBar(appbarText: 'ST Wallet',),
       drawer: DrawerWidget(currentIndex: DrawerCubit.get(context).currentIndex),
       body: Container(
         decoration: customBackGround(),

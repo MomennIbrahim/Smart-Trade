@@ -16,3 +16,4 @@ class UserProfileFailureState extends UserProfileState {
 
   UserProfileFailureState(this.errMessage);
 }
+

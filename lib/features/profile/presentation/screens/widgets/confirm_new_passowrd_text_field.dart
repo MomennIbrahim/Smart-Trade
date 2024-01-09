@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/widgets/custom_text_field.dart';
+import '../../controller/update_password_cubit/update_password_cubit.dart';
 
 class ConfirmNewPasswordTextField extends StatelessWidget {
   const ConfirmNewPasswordTextField(
@@ -11,6 +12,8 @@ class ConfirmNewPasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      focusNode: UpdatePasswordCubit.get(context).textFieldFocusNode,
+      obscureText: true,
       controller: confirmNewPasswordController,
       keyBoardType: TextInputType.name,
       labelText: 'Enter new password',

@@ -12,6 +12,7 @@ class UserNameTextField extends StatelessWidget {
     return CustomTextFormField(
       labelColor: Colors.black54,
       fillColor: Colors.blueGrey[100]!,
+      style: const TextStyle(color: Colors.black),
       controller: userNameController,
       keyBoardType: TextInputType.emailAddress,
       labelText: 'Enter user name',

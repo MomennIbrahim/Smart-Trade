@@ -10,6 +10,7 @@ import 'package:task_app/features/term/data/repository/term_repository_implement
 import 'package:task_app/features/term/presentation/controller/long_term_cubit/long_term_cubit.dart';
 import 'package:task_app/features/term/presentation/screens/widgets/long_term_text.dart';
 import '../../../drawer/presentation/screens/drawer_widget.dart';
+import '../controller/configuration_cubit/configuration_cubit.dart';
 import 'widgets/long_term_card_listview.dart';
 
 class LongTermScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class LongTermScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => LongTermCubit(getIt.get<TermRepositoryImplementation>())..getLongTerm(),
       child: Scaffold(
-        appBar: const CustomAppBar(appbarText: 'Long Term'),
+        appBar: CustomAppBar(appbarText: 'Long Term',),
         drawer: DrawerWidget(currentIndex: DrawerCubit
             .get(context)
             .currentIndex),

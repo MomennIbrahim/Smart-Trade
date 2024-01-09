@@ -23,7 +23,6 @@ class EditProfileScreen extends StatelessWidget {
       create: (context) =>
           EditProfileCubit(getIt.get<ProfileRepositoryImplementation>()),
       child: BlocConsumer<EditProfileCubit, EditProfileState>(
-
         listener: (context, state) {
           if(state is EditProfileSuccessState){
             EditProfileCubit.get(context).stateIsSuccess(state, context);

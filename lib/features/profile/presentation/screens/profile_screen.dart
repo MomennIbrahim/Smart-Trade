@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task_app/core/utils/service_locator.dart';
 import 'package:task_app/core/utils/sized.dart';
 import 'package:task_app/core/widgets/animated_loading.dart';
 import 'package:task_app/core/widgets/custom_background.dart';
@@ -20,18 +19,17 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserProfileCubit, UserProfileState>(
-      builder: (context, state) {
-        if (state is UserProfileSuccessState) {
-          return Scaffold(
-            appBar: AppBar(
-              title: const Text('My profile'),
-            ),
-            body: ZoomIn(
-              duration: const Duration(milliseconds: 750),
-              child: Container(
-                height: double.infinity,
-                decoration: customBackGround(),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('My profile'),
+      ),
+      body: Container(
+        height: double.infinity,
+        decoration: customBackGround(),
+        child: BlocBuilder<UserProfileCubit, UserProfileState>(
+          builder: (context, state) {
+            if (state is UserProfileSuccessState) {
+              return ZoomIn(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: 16.0.w, vertical: 12.0.h),
@@ -43,13 +41,17 @@ class ProfileScreen extends StatelessWidget {
                             userProfileModel: state.userProfileModel),
                         CustomSized.sizedHeight50,
                         PersonInfoWidget(
-                            text: '${state.userProfileModel.phone?? 'You did not enter any phone number'}', icon: Icons.phone),
+                            text:
+                                '${state.userProfileModel.phone ?? 'You did not enter any phone number'}',
+                            icon: Icons.phone),
                         CustomSized.sizedHeight10,
                         PersonInfoWidget(
-                            text: state.userProfileModel.email.toString(),
-                            icon: Icons.email_outlined,),
+                          text: state.userProfileModel.email.toString(),
+                          icon: Icons.email_outlined,
+                        ),
                         CustomSized.sizedHeight24,
-                        FeesAndOrderRowWidget(userProfileModel: state.userProfileModel),
+                        FeesAndOrderRowWidget(
+                            userProfileModel: state.userProfileModel),
                         CustomSized.sizedHeight24,
                         const ContactUsWidget(),
                         CustomSized.sizedHeight15,
@@ -62,17 +64,17 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ),
-          );
-        } else if (state is UserProfileFailureState) {
-          return ErrorText(
-            errMessage: state.errMessage,
-          );
-        } else {
-          return const AnimatedLoading();
-        }
-      },
+              );
+            } else if (state is UserProfileFailureState) {
+              return ErrorText(
+                errMessage: state.errMessage,
+              );
+            } else {
+              return const AnimatedLoading();
+            }
+          },
+        ),
+      ),
     );
   }
 }

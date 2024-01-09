@@ -8,7 +8,6 @@ import 'package:task_app/features/splash/splash_screen.dart';
 import '../../features/profile/presentation/screens/contact_us_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 
-
 abstract class AppRouter {
   static const kLoginScreen = '/loginScreen';
   static const kRegisterScreen = '/registerScreen';
@@ -18,49 +17,48 @@ abstract class AppRouter {
   static const kContactUsScreen = '/contactUsScreen';
   static const kEditProfileScreen = '/editProfileScreen';
 
-  static final GoRouter router = GoRouter(
-    routes: <RouteBase>[
-      GoRoute(
-        path: '/',
-        builder: (BuildContext context, GoRouterState state) {
-          return const SplashScreen();
-        },
-      ),
-      GoRoute(
-        path: kLoginScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const LoginScreen();
-        },
-      ),
-      GoRoute(
-        path: kRegisterScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const RegisterScreen();
-        },
-      ),
-      GoRoute(
-        path: kHomeScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const HomeScreen();
-        },
-      ),
-      GoRoute(
-        path: kProfileScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const ProfileScreen();
-        },
-      ),
-      GoRoute(
-        path: kContactUsScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const ContactUsScreen();
-        },
-      ),
-      GoRoute(
-        path: kEditProfileScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const EditProfileScreen();
-        },
-      ),
- ]);
+  static final GoRouter router = GoRouter(routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const SplashScreen();
+      },
+    ),
+    GoRoute(
+      path: kLoginScreen,
+      builder: (BuildContext context, GoRouterState state) {
+        return const LoginScreen();
+      },
+    ),
+    GoRoute(
+      path: kRegisterScreen,
+      builder: (BuildContext context, GoRouterState state) {
+        return const RegisterScreen();
+      },
+    ),
+    GoRoute(
+      path: kHomeScreen,
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeScreen();
+      },
+    ),
+    GoRoute(
+      path: kProfileScreen,
+      builder: (BuildContext context, GoRouterState state) {
+        return const ProfileScreen();
+      },
+    ),
+    GoRoute(
+      path: kContactUsScreen,
+      builder: (BuildContext context, GoRouterState state) {
+        return const ContactUsScreen();
+      },
+    ),
+    GoRoute(
+      path: kEditProfileScreen,
+      builder: (BuildContext context, GoRouterState state) {
+        return const EditProfileScreen();
+      },
+    ),
+  ]);
 }

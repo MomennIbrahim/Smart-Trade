@@ -34,11 +34,9 @@ class UserLoginCubit extends Cubit<UserLoginState> {
 
     result.fold((failure){
       emit(UserLoginFailureState(failure.errMessage));
-      print(failure.errMessage.toString());
     }, (userModel){
       userLoginModel = userModel;
       emit(UserLoginSuccessState(userModel));
-      print(userModel.accessToken);
     });
   }
 
@@ -50,6 +48,4 @@ class UserLoginCubit extends Cubit<UserLoginState> {
     isVisibility? icon = const Icon(Icons.visibility) :  icon = const Icon(Icons.visibility_off);
     emit(ChangeVisibilityState());
   }
-
-
 }

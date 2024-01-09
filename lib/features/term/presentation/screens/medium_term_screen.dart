@@ -9,6 +9,7 @@ import 'package:task_app/core/widgets/custom_background.dart';
 import 'package:task_app/features/drawer/presentation/controller/drawer_cubit.dart';
 import '../../../drawer/presentation/screens/drawer_widget.dart';
 import '../../data/repository/term_repository_implementation.dart';
+import '../controller/configuration_cubit/configuration_cubit.dart';
 import '../controller/medium_term_cubit/medium_term_cubit.dart';
 import 'widgets/medium_term_card_listview.dart';
 import 'widgets/medium_term_text_detail.dart';
@@ -25,7 +26,7 @@ class MediumTermScreen extends StatelessWidget {
           MediumTermCubit(getIt.get<TermRepositoryImplementation>())
             ..getMediumTerm(),
       child: Scaffold(
-        appBar: const CustomAppBar(appbarText: 'Medium Term'),
+        appBar:  CustomAppBar(appbarText: 'Medium Term',),
         drawer:
             DrawerWidget(currentIndex: DrawerCubit.get(context).currentIndex),
         body: Container(

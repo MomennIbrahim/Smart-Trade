@@ -13,7 +13,7 @@ class BotInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(appbarText: 'Bot Information'),
+      appBar: const CustomAppBar(appbarText: 'Bot Information',),
       // bottomNavigationBar: CustomButton(text: 'Shutdown', onPressed: (){},buttonColor: Colors.blue,paddingHorizontal: 0,height: 50,),
       body: Container(
         decoration: customBackGround(),
