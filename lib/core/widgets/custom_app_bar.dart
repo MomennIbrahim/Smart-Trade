@@ -6,8 +6,6 @@ import 'package:task_app/core/constace.dart';
 import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/core/utils/styles.dart';
 import 'package:task_app/core/widgets/cahed_network.dart';
-import 'package:task_app/features/profile/presentation/screens/profile_screen.dart';
-import 'package:task_app/features/profile/presentation/screens/widgets/logout_widget.dart';
 import 'package:task_app/features/term/presentation/controller/configuration_cubit/configuration_cubit.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
