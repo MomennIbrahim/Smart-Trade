@@ -59,7 +59,7 @@ abstract class AppRouter {
       GoRoute(
         path: kEditProfileScreen,
         builder: (BuildContext context, GoRouterState state) {
-          return EditProfileScreen();
+          return const EditProfileScreen();
         },
       ),
  ]);

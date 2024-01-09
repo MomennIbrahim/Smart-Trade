@@ -9,6 +9,7 @@ import 'package:task_app/features/home/presentation/screens/widgets/custom_marqu
 import 'package:task_app/features/home/presentation/screens/widgets/status_widget.dart';
 import '../../../../core/utils/sized.dart';
 import '../../../../core/widgets/custom_background.dart';
+import '../../../profile/presentation/screens/widgets/logout_widget.dart';
 import 'widgets/carousel_smart_trade.dart';
 import 'widgets/main_bots_list_view_horizontal.dart';
 import 'widgets/trade_bot_text.dart';
@@ -57,6 +58,7 @@ class HomeScreen extends StatelessWidget {
                 // CustomSized.sizedHeight24,
                 const ProfitAndFeesWidget(),
                 CustomSized.sizedHeight24,
+                const LogoutWidget(),
               ],
             ),
           ),

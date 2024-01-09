@@ -25,7 +25,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
           SizedBox(
             width: 10.w,
           ),
-          const LogoutWidget(),
           Expanded(
             child: Text(
               appbarText,

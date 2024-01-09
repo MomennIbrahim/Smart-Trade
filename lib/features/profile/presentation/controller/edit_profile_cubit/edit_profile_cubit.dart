@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:meta/meta.dart';
 import 'package:task_app/features/profile/data/model/update_user_model.dart';
 import 'package:task_app/features/profile/data/repository/base_profile_repository.dart';
-
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/widgets/success_snack_bar.dart';
 import '../user_profile_cubit/user_profile_cubit.dart';
@@ -39,8 +38,8 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     });
   }
 
-  void stateIsSuccess(state,context){
-    GoRouter.of(context).go(AppRouter.kProfileScreen);
+   stateIsSuccess(state,context){
+    GoRouter.of(context).go(AppRouter.kHomeScreen);
     UserProfileCubit.get(context).getUserProfile();
     successSnackBar(context: context, message: state.updateUserModel.message!);
   }

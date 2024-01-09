@@ -23,7 +23,7 @@ class ChildBotsOfMainScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Child bots of main'),
-          toolbarHeight: 70.h,
+          toolbarHeight: 50.h,
         ),
         body: Container(
           decoration: customBackGround(),
@@ -32,7 +32,7 @@ class ChildBotsOfMainScreen extends StatelessWidget {
               const ChildBotsOfMainListView(),
               CustomSized.sizedHeight10,
               PreviewAndNextWidget(mainBotId: index),
-              CustomSized.sizedHeight10,
+              CustomSized.sizedHeight15,
             ],
           ),
         ),
